@@ -1,0 +1,54 @@
+body { 
+  font-family: 'Helvetica';
+  color: #333; 
+  line-height: 1.25; 
+  margin: 2em; 
+} 
+
+@font-face {
+  font-family: "RobotoRegular";
+  src: url("/Roboto-Regular.ttf");
+}
+
+a {
+  color: #337ab7; 
+  text-decoration: none; 
+}
+
+.topbar {
+  color: white;
+  font-size: 15px;
+  position: absolute;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 30;
+  padding: 6px;
+  left: 50%;
+  transform: translate(-50% , 0%);
+}
+
+.topbar.success {
+  background: rgb(39, 150, 39);
+}
+
+.topbar.fail {
+  background: #c12d2d;
+}
+
+.topbar a {
+  color: white;
+  text-decoration: underline;
+}
+
+.back-button {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: black;
+  color: white;
+  border-bottom-right-radius: 5px;
+  padding: 0.5em;
+}
