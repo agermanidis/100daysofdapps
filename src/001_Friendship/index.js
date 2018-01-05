@@ -4,12 +4,11 @@ import {
   BackButton,
   ExternalLink,
   EthereumWrapper, 
-  getEtherscanAddressUrl, 
-  getEtherscanTxUrl,
+  EtherscanTxLink, 
+  EtherscanAddressLink,
   truncate
 } from '../common';
 import contractABI from './abi';
-import update from "immutability-helper";
 import ReactLoading from "react-loading";
 
 import './index.css';
@@ -71,11 +70,10 @@ class App extends SugarComponent {
     let statusEl;
     if (this.state.pendingTx) {
       statusEl = <span className="pending-tx">
-          Pending confirmation: <ExternalLink
-            href={getEtherscanTxUrl(this.state.pendingTx)}
-          >
+          Pending confirmation:
+          <EtherscanTxLink transaction={this.state.pendingTx}>
             {truncate(this.state.pendingTx)}
-          </ExternalLink>
+          </EtherscanTxLink>
           <ReactLoading className="loading" type="spin" color="#444" />
         </span>;
     } else if (this.state.isFriend) {
@@ -91,11 +89,10 @@ class App extends SugarComponent {
     }
 
     return (
-      <div id="main">
-        <BackButton />
-        <h1>Blockchain Friendship Contract</h1>
-        <p>Nice to meet you, {this.props.address || "stranger"}.</p>
-        <p>I am 0x02f807d30DcA3bAb5C5b010F5D9a05e4876dcaB8.</p>
+      <div id="main">        
+        <h1>Friendship Contract</h1>
+        <p>Nice to meet you, {this.props.address ? <EtherscanAddressLink address={this.props.address}/> : "stranger"}.</p>
+        <p>I am <EtherscanAddressLink address='0x02f807d30DcA3bAb5C5b010F5D9a05e4876dcaB8'/>.</p>
         <p>I want to be your friend, but only if it's public and forever.</p>
         <p>On the blockchain, everything is public and forever.</p>
         <p>Will you please be my friend, publicly, forever?</p>
@@ -104,13 +101,14 @@ class App extends SugarComponent {
           <b>Number of friends:</b> {this.state.numberOfFriends}
         </p>
         <p>
-          <b>Latest Friend:</b> {this.state.latestFriend}
+          <b>Latest Friend:</b>{' '}
+          <EtherscanAddressLink address={this.state.latestFriend} />
         </p>
         <p>
           <b>Friendship Smart Contract:</b>{" "}
-          <ExternalLink href={getEtherscanAddressUrl(CONTRACT_ADDRESS)}>
+          <EtherscanAddressLink address={CONTRACT_ADDRESS}>
             View on Etherscan
-          </ExternalLink>
+          </EtherscanAddressLink>
         </p>
       </div>
     );

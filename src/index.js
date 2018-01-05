@@ -9,12 +9,14 @@ import { HashRouter, Switch } from "react-router-dom";
 import { EthereumWrapper } from "./common";
 
 import Day001 from "./001_Friendship";
+import Day002 from './002_Forgiveness';
 
 ReactDOM.render(
   <HashRouter>
     <Switch>
       <Route exact path="/" component={App} />
       <Route path="/001_Friendship" component={Day001} />
+      <Route path="/002_Forgiveness" component={Day002} />
     </Switch>
   </HashRouter>,
   document.getElementById("root")

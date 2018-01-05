@@ -1,5 +1,5 @@
 body { 
-  font-family: 'Helvetica';
+  font-family: 'Roboto';
   color: #333; 
   line-height: 1.25; 
   margin: 2em; 
@@ -9,6 +9,12 @@ body {
   font-family: "RobotoRegular";
   src: url("/Roboto-Regular.ttf");
 }
+
+@font-face {
+  font-family: "Maran";
+  src: url("/Maran.ttf");
+}
+
 
 a {
   color: #337ab7; 
@@ -23,7 +29,6 @@ a {
   border-bottom-right-radius: 5px;
   position: absolute;
   top: 0px;
-  left: 0px;
   z-index: 30;
   padding: 6px;
   left: 50%;
@@ -51,4 +56,41 @@ a {
   color: white;
   border-bottom-right-radius: 5px;
   padding: 0.5em;
+}
+
+.success-text {
+  color:  rgb(39, 150, 39);
+}
+
+.fail-text {
+  color: #c12d2d;
+}
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 900px) 
+  and (-webkit-min-device-pixel-ratio: 2) { 
+
+    .topbar {
+      width: 30%;
+      position: absolute;
+    }
+
+    body {
+      text-align: center;
+    }
+
+    .back-button {
+      width: 100px;
+    }
+
+    a {
+      
+        max-width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        vertical-align: middle;
+        display: inline-block;
+    }
 }

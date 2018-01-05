@@ -14,9 +14,8 @@ class App extends Component {
           </ExternalLink>
         </h1>
         <h3>
-          1. <Link to="/001_Friendship">
-            Blockchain Friendship Contract
-          </Link>
+          <p>1. <Link to="/001_Friendship">Friendship Contract</Link></p>
+          <p>2. <Link to="/002_Forgiveness">Blockchain Confessional</Link></p>
         </h3>
       </div>;
   }

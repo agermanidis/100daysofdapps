@@ -1,0 +1,122 @@
+body {
+    /* background: linear-gradient(0deg,#ffe7fa,#e6ffff,#ffffe6); */
+}
+
+#main {
+    margin: 2em;
+    /* text-align: center; */
+    margin-top: 5em;
+}
+
+button {
+    padding: 0.75em;
+    border: 1px solid gray;
+}
+
+p, button {
+    font-size: 1.5em;
+}
+
+span {
+    font-size: 1em;
+}
+
+button:hover:not([disabled]) {
+    background: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+button:focus {
+    outline: none;
+}
+
+button:active {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.pending-tx {
+    margin-left: 1em;
+    font-size: 1em;
+}
+
+.loading {
+    margin-left: 1em;
+    display: inline-block;
+    width: 15px !important;
+    height: 15px !important;
+}
+
+.loading svg {
+    max-width: 15px;
+    max-height: 15px;
+}
+
+li {
+    font-size: 1.25em;
+    list-style: none;
+    margin: 0.6em 0;
+}
+
+blockquote {
+    font-size: 1.25em;
+}
+
+
+#day002_box {
+    border: 1px solid black;
+    margin: 3em;
+}
+
+#day002_box p {
+
+}
+
+ul {
+    margin: 3em;
+    display: block;
+}
+
+blockquote {
+  /* background: #f9f9f9; */
+  /* border-left: 10px solid #ccc; */
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+  /* color: #ccc; */
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.2em;
+  vertical-align: -0.4em;
+}
+
+blockquote:after {
+  content: close-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-left: 0.2em;
+  vertical-align: -0.6em;
+}
+
+blockquote p {
+  display: inline;
+}
+
+.quote-author {
+    margin-top: -2em;
+    margin-bottom: 2em;
+}
+
+.forgiveness-input {
+    padding: 1em;
+    font-size: 18px;
+    width: 50%;
+    outline: none;
+}
+
+.forgiveness-button {
+    font-size: 1em;
+    margin: 1em;
+}

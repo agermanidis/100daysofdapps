@@ -35,20 +35,19 @@ button:active {
 }
 
 .pending-tx {
-  margin-left: 1em;
-  font-size: 1em;
+    margin-left: 1em;
+    font-size: 1em;
 }
 
 .loading {
-  margin-left: 1em;
-  display: inline-block;
-  width: 15px !important;
-  height: 15px !important;
+    margin-left: 1em;
+    display: inline-block;
+    width: 15px !important;
+    height: 15px !important;
 }
 
 .loading svg {
     max-width: 15px;
-  max-height: 15px;
-
+    max-height: 15px;
 }
 

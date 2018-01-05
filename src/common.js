@@ -26,6 +26,20 @@ const ExternalLink = ({children, ...rest}) => {
     return <a target='_blank' {...rest}>{children}</a>;
 }
 
+const EtherscanTxLink = ({ transaction, truncate, text }) => {
+    const inner = text || (truncate ? truncate(transaction) : transaction);
+    return <ExternalLink href={getEtherscanTxUrl(transaction)}>
+        {inner}
+      </ExternalLink>;
+}
+
+const EtherscanAddressLink = ({ address, truncate, text }) => {
+    const inner = text || (truncate ? truncate(address) : address);
+    return <ExternalLink href={getEtherscanAddressUrl(address)}>
+        {inner}
+      </ExternalLink>;
+};
+
 const TopBar = ({hasWeb3, network, address}) => {
     if (hasWeb3 && network === 'mainnet') {
         return (
@@ -48,7 +62,7 @@ const TopBar = ({hasWeb3, network, address}) => {
 
 const BackButton = () => {
     return <Link to="/" className="back-button">
-        ← Back to index
+        ← Back
       </Link>;
 }
 
@@ -68,28 +82,34 @@ class EthereumWrapper extends Component {
     });
   }
 
-  async initWeb3 () {
-    const {hasWeb3, web3} = this.state;
-
+  async initWeb3 (hasWeb3, web3) {
     const accounts = await web3.eth.getAccounts();
 
-    this.setState({ address: accounts[0] });
-    this.refreshLatestBlock();
+    const address = accounts[0];
 
     const netId = await web3.eth.net.getId();
+    console.log('NET ID', netId);
+    let network = null;
     switch (netId) {
       case 1:
-        this.setState({ network: "mainnet" });
+        network = 'mainnet';
         break;
       case 2:
-        this.setState({ network: "rinkeby" });
+        network = 'rinkeby';
         break;
       case 3:
-        this.setState({ network: "ropsten" });
+        network = 'ropsten';
         break;
       default:
         break;
     }
+
+    this.setState({
+        web3,
+        hasWeb3,
+        network,
+        address
+    }, () => {  this.refreshLatestBlock(); })
   }
 
   componentDidMount() {
@@ -101,12 +121,7 @@ class EthereumWrapper extends Component {
 
       console.log("version:", web3.version);
 
-      this.setState({
-          hasWeb3,
-          web3
-      }, () => {
-        this.initWeb3();
-      });
+     this.initWeb3(hasWeb3, web3);
 
   }
 
@@ -116,18 +131,21 @@ class EthereumWrapper extends Component {
       return React.cloneElement(child, this.state);
     });
     return <div>
-        <TopBar {...this.state}/>
+        <TopBar {...this.state} />
+        <BackButton />
         {childrenWithProp}
-    </div>
+      </div>;
   }
 }
 
-export { 
-    truncate,
-    BackButton,
-    ExternalLink,
-    SugarComponent,
-    EthereumWrapper, 
-    getEtherscanAddressUrl, 
-    getEtherscanTxUrl    
+export {
+  truncate,
+  BackButton,
+  ExternalLink,
+  SugarComponent,
+  EthereumWrapper,
+  getEtherscanAddressUrl,
+  getEtherscanTxUrl,
+  EtherscanTxLink,
+  EtherscanAddressLink
 };
