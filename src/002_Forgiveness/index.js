@@ -15,6 +15,7 @@ import './index.css';
 
 import Church from './church.png';
 import Bar from "./bar.png";
+import Title from './title.png';
 
 const CONTRACT_ADDRESSES = {
   mainnet: "0x1b1981a32999ad581fb01487ffbb26f620ca917a",
@@ -88,11 +89,8 @@ class App extends SugarComponent {
     return (
       <div id="main" style={{ textAlign: "center" }}>
         <img width={200} src={Church} />
-        <h1
-          style={{ fontFamily: "Maran", fontSize: 50, letterSpacing: "0.5rem" }}
-        >
-          The Blockchain Confessional
-        </h1>
+        <br/>
+        <img height={75} src={Title}  />
         <blockquote>
           If we confess our sins, He is faithful and just and will forgive us
           our sins and purify us from all unrighteousness.

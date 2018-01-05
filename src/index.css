@@ -1,14 +1,9 @@
 body { 
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   color: #333; 
   line-height: 1.25; 
   margin: 2em; 
 } 
-
-@font-face {
-  font-family: "RobotoRegular";
-  src: url("/Roboto-Regular.ttf");
-}
 
 @font-face {
   font-family: "Maran";
