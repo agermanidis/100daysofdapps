@@ -132,7 +132,7 @@ class App extends SugarComponent {
                 <img width={100} src='http://laoblogger.com/images/clipart-shhh-7.jpg' />
                 <h1>Secret Keeper</h1>
                 <p>Store a secret message on the Ethereum blockchain.</p>
-                <p>Reveal it whenever you want with public proof of the time of you submitted it.</p>
+                <p>Reveal it whenever you want with public proof of the time of submission.</p>
                 </div>
             <div id='sk-body'>
             <div id='sk-left'>
@@ -148,9 +148,9 @@ class App extends SugarComponent {
                     network={this.props.network}
                     >
                 <div>
-                    <button onClick={this.storeSecret.bind(this)}>Store</button> 
+                    <button disabled={!this.props.isNetworkSupported} onClick={this.storeSecret.bind(this)}>Store</button> 
                     {' '}or{' '}
-                    <button onClick={this.revealSecret.bind(this)}>Reveal</button>
+                    <button disabled={!this.props.isNetworkSupported} onClick={this.revealSecret.bind(this)}>Reveal</button>
                 </div>
                 {statusMsg && <p className={`status-msg ${txSucceded ? 'success-text' : 'fail-text'}`}>
                     {statusMsg}
@@ -163,11 +163,7 @@ class App extends SugarComponent {
                 {secrets.map((secret, index) => {
                     return <Secret key={index} {...secret}/>
                 })}
-                {/* <Secret secret={'I am ok'} hash={'0x1ea442a134b2a184bd5d40104401f2a37fbc09ccf3f4bc9da161c6099be3691d'}/> */}
-                {/* <Secret secret={''} hash={'0x1ea442a134b2a184bd5d40104401f2a37fbc09ccf3f4bc9da161c6099be3691d'}/> */}
             </div>
-
-
             </div>
         <p style={{textAlign: 'center'}}>
           <EtherscanAddressLink
@@ -182,7 +178,9 @@ class App extends SugarComponent {
 }
 
 const Wrapped = () => (
-  <EthereumWrapper supportedNetworks={Object.keys(CONTRACT_ADDRESSES)}>
+  <EthereumWrapper 
+    mainNetwork='ropsten'
+    supportedNetworks={Object.keys(CONTRACT_ADDRESSES)}>
     <App />
   </EthereumWrapper>
 );

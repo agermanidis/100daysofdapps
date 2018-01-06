@@ -1,0 +1,36 @@
+#cc-main {
+    text-align: center;
+}
+
+.separator {
+    width: 200px;
+    border-bottom: 1px solid gray;
+    margin: auto;
+}
+
+#cc-head {
+        display: flex;
+    align-items: center;
+
+}
+
+#cc-head {
+    font-size: 0.8em;
+}
+
+#cc-main button {
+    font-size: 20px;
+    margin: 0em;
+}
+
+#cc-main input {
+
+    padding: 1em;
+    font-size: 18px;
+    outline: none;
+    margin: 1em 0;
+
+}
+
+#cc-body {
+}

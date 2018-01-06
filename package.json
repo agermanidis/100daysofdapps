@@ -6,6 +6,7 @@
   "dependencies": {
     "immutability-helper": "^2.6.2",
     "js-sha256": "^0.9.0",
+    "moment": "^2.20.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-icons": "^2.2.7",

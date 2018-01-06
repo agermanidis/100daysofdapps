@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import './App.css';
 import EthLogo from './ethlogo.svg';
 import {ExternalLink} from './common';
+import FaGithub from 'react-icons/lib/fa/github';
 
 class App extends Component {
   render() {
@@ -11,7 +12,7 @@ class App extends Component {
         <h1>
           100 Days of Ðapps
         </h1>
-        <p>Note: Due to <ExternalLink href='https://ethgasstation.info/'>outrageous gas prices</ExternalLink>, all contracts will be deployed on the Ropsten test network, starting from day 3.</p>
+        <p>Note: Due to <ExternalLink href='https://ethgasstation.info/'>outrageous gas prices</ExternalLink  >, contracts will be deployed on the Ropsten test network, starting from day 3 and until situation improves.</p>
         <h3>
           <p>
             1. <Link to="/001_Friendship">Friendship Contract</Link>
@@ -22,7 +23,11 @@ class App extends Component {
           <p>
             3. <Link to="/003_SecretKeeper">Secret Keeper</Link>
           </p>
+          <p>
+            4. <Link to="/004_ChristmasClub">Christmas Club</Link>
+          </p>
         </h3>
+        <ExternalLink href="https://github.com/agermanidis/100daysofdapps"><FaGithub/>View source on Github</ExternalLink>
       </div>;
   }
 }

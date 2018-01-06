@@ -124,7 +124,7 @@ class EthereumWrapper extends Component {
         break;
     }
 
-    const isNetworkSupported = this.props.supportedNetworks.includes(network);
+    const isNetworkSupported = hasWeb3 && this.props.supportedNetworks.includes(network);
 
     this.setState(
       {
@@ -141,7 +141,7 @@ class EthereumWrapper extends Component {
   }
 
   componentDidMount() {
-    const REMOTE_WALLET = "https://mainnet.infura.io/WMJsUBMh7rbJXx3SgYIP";
+    const REMOTE_WALLET = `https://${this.props.mainNetwork || 'mainnet'}.infura.io/WMJsUBMh7rbJXx3SgYIP`;
 
     const hasWeb3 = !!window.web3;
     const remoteWeb3 = new Web3(new Web3.providers.HttpProvider(REMOTE_WALLET));

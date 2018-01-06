@@ -61,10 +61,14 @@ a {
   and (min-device-width: 320px) 
   and (max-device-width: 900px) 
   and (-webkit-min-device-pixel-ratio: 2) { 
+    .App {
+      width: 100% !important;
+    }
 
     .topbar {
       width: 30%;
       position: absolute;
+      font-size: 0.7em;
     }
 
     body {
@@ -75,13 +79,33 @@ a {
       width: 100px;
     }
 
-    a {
-      
-        max-width: 100%;
-        white-space: nowrap;
-        overflow: hidden;
+    p {
+      font-size: 0.5em;
+    }
+
+    a,p,div {
+        /* font-size: 0.7em; */
         text-overflow: ellipsis;
         vertical-align: middle;
-        display: inline-block;
     }
+
+    a {
+        white-space: nowrap;
+        overflow: hidden;
+        display: inline-block;
+
+    }
+
+    ul {
+          padding-left: 0;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    * {
+      flex-direction: column;
+    }
+
 }
