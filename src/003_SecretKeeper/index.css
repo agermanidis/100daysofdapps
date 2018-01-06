@@ -1,0 +1,69 @@
+.sk-input {
+    padding: 1em;
+    font-size: 18px;
+    width: 80%;
+    outline: none;
+    height: 150px;
+    margin: 1em 0;
+}
+
+#sk-main button {
+    font-size: 25px;
+    margin: 1em;
+}
+
+#sk-main {
+    text-align: left;
+    margin: 2em;
+}
+
+#sk-head {
+    display: flex;
+    align-items: center;
+}
+
+#sk-body {
+    display: flex;
+    text-align: center;
+}
+
+.sk-secret {
+    margin: 2em;
+    border-top: 1px dotted gray;
+    border-bottom: 1px dotted gray;
+    padding: 1em;
+}
+
+.sk-tag {
+    font-size: 13px;
+    color: gray;
+}
+
+.secret-date {
+    font-size: 13px;
+    color: gray;
+}
+
+#sk-main svg {
+    color: gray;
+}
+
+
+#sk-head > * {
+    margin: 1em;
+}
+
+#sk-left {
+    flex: 0.6;
+}
+
+#sk-right {
+    margin-left: 1em;
+    text-align: center;
+    flex: 0.4;
+}
+
+.secret-content {
+    margin: 1em 0;
+}
+

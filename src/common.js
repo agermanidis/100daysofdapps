@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Web3 from "web3";
 import { Link } from "react-router-dom";
+import ReactLoading from "react-loading";
 
 class SugarComponent extends Component {
   setStateAsync(state) {
@@ -10,11 +11,13 @@ class SugarComponent extends Component {
   }
 }
 
-function getEtherscanAddressUrl(addr) {
+function getEtherscanAddressUrl(addr, network = 'mainnet') {
+  if (network === 'ropsten')  return `https://ropsten.etherscan.io/address/${addr}`;
   return `https://etherscan.io/address/${addr}`;
 }
 
-function getEtherscanTxUrl(addr) {
+function getEtherscanTxUrl(addr, network = 'mainnet') {
+  if (network === 'ropsten')  return `https://ropsten.etherscan.io/tx/${addr}`;
   return `https://etherscan.io/tx/${addr}`;
 }
 
@@ -26,22 +29,39 @@ const ExternalLink = ({children, ...rest}) => {
     return <a target='_blank' {...rest}>{children}</a>;
 }
 
-const EtherscanTxLink = ({ transaction, truncate, text }) => {
+const EtherscanTxLink = ({ transaction, truncate, text, network }) => {
     const inner = text || (truncate ? truncate(transaction) : transaction);
-    return <ExternalLink href={getEtherscanTxUrl(transaction)}>
+    return <ExternalLink href={getEtherscanTxUrl(transaction, network)}>
         {inner}
       </ExternalLink>;
 }
 
-const EtherscanAddressLink = ({ address, truncate, text }) => {
+const EtherscanAddressLink = ({ address, truncate, text, network }) => {
     const inner = text || (truncate ? truncate(address) : address);
-    return <ExternalLink href={getEtherscanAddressUrl(address)}>
+    return <ExternalLink href={getEtherscanAddressUrl(address, network)}>
         {inner}
       </ExternalLink>;
 };
 
-const TopBar = ({hasWeb3, network, address}) => {
-    if (hasWeb3 && network === 'mainnet') {
+const joinOr = (arr) => {
+    if (arr.length == 1) return arr[0];
+    return arr.slice(0, arr.length - 1).join(', ') + ' or ' + arr.slice(arr.length-1);
+}
+
+const WithPendingTransaction = ({transaction, network, children}) => {
+    if (transaction) {
+        return (<span className="pending-tx">
+                Pending confirmation (might take a minute):{" "}
+                <EtherscanTxLink network={network} transaction={transaction} />
+                <ReactLoading className="loading" type="spin" color="#444" />
+              </span>);
+    } else {
+        return children;
+    }
+}
+
+const TopBar = ({hasWeb3, network, isNetworkSupported, supportedNetworks, address}) => {
+    if (hasWeb3 && isNetworkSupported) {
         return (
             <div className='topbar success'>
                 Metamask detected. Connected to {network}.
@@ -49,7 +69,7 @@ const TopBar = ({hasWeb3, network, address}) => {
         )
     } else if (hasWeb3) {
         return <div className="topbar fail">
-            Metamask detected but network is not mainnet. Please switch to mainnet. This site will be read-only.
+            Metamask detected but network is not supported. Please switch to {joinOr(supportedNetworks)}. This site will be read-only.
           </div>;
     } else {
         return <div className="topbar fail">
@@ -67,74 +87,87 @@ const BackButton = () => {
 }
 
 class EthereumWrapper extends Component {
-  constructor () {
+  constructor() {
     super();
     this.state = {
-        hasWeb3: false,
-        network: null
+      hasWeb3: false,
+      network: null
     };
   }
 
-  refreshLatestBlock () {
-    const {web3} = this.state;
-    web3.eth.getBlock('latest', (err, block) => {
+  refreshLatestBlock() {
+    const { web3 } = this.state;
+    web3.eth.getBlock("latest", (err, block) => {
       this.setState({ blockNumber: block.number });
     });
   }
 
-  async initWeb3 (hasWeb3, web3) {
+  async initWeb3(hasWeb3, web3, remoteWeb3) {
     const accounts = await web3.eth.getAccounts();
 
     const address = accounts[0];
 
     const netId = await web3.eth.net.getId();
-    console.log('NET ID', netId);
+    console.log("NET ID", netId);
     let network = null;
     switch (netId) {
       case 1:
-        network = 'mainnet';
+        network = "mainnet";
         break;
       case 2:
-        network = 'rinkeby';
+        network = "rinkeby";
         break;
       case 3:
-        network = 'ropsten';
+        network = "ropsten";
         break;
       default:
         break;
     }
 
-    this.setState({
-        web3,
+    const isNetworkSupported = this.props.supportedNetworks.includes(network);
+
+    this.setState(
+      {
+        web3: isNetworkSupported ? web3 : remoteWeb3,
         hasWeb3,
-        network,
+        network: isNetworkSupported ? network : this.props.supportedNetworks[0],
+        isNetworkSupported,
         address
-    }, () => {  this.refreshLatestBlock(); })
+      },
+      () => {
+        this.refreshLatestBlock();
+      }
+    );
   }
 
   componentDidMount() {
-      const REMOTE_WALLET = "https://mainnet.infura.io/WMJsUBMh7rbJXx3SgYIP";
+    const REMOTE_WALLET = "https://mainnet.infura.io/WMJsUBMh7rbJXx3SgYIP";
 
-      const hasWeb3 = !!window.web3;
-      const web3 = hasWeb3 ? new Web3(window.web3) : new Web3(
-          new Web3.providers.HttpProvider(REMOTE_WALLET));
+    const hasWeb3 = !!window.web3;
+    const remoteWeb3 = new Web3(new Web3.providers.HttpProvider(REMOTE_WALLET));
+    const web3 = hasWeb3 ? new Web3(window.web3) : remoteWeb3;
 
-      console.log("version:", web3.version);
+    console.log("version:", web3.version);
 
-     this.initWeb3(hasWeb3, web3);
-
+    this.initWeb3(hasWeb3, web3, remoteWeb3);
   }
 
   render() {
-    if (!this.state.web3) return <p>Loading...</p>
+    console.log(this.props);
+    if (!this.state.web3) return <p>Loading...</p>;
     const childrenWithProp = React.Children.map(this.props.children, child => {
       return React.cloneElement(child, this.state);
     });
-    return <div>
-        <TopBar {...this.state} />
+    return (
+      <div>
+        <TopBar
+          {...this.state}
+          supportedNetworks={this.props.supportedNetworks}
+        />
         <BackButton />
         {childrenWithProp}
-      </div>;
+      </div>
+    );
   }
 }
 
@@ -147,5 +180,6 @@ export {
   getEtherscanAddressUrl,
   getEtherscanTxUrl,
   EtherscanTxLink,
-  EtherscanAddressLink
+  EtherscanAddressLink,
+  WithPendingTransaction
 };

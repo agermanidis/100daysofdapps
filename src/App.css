@@ -1,10 +1,10 @@
 .App {
   text-align: center;
+  margin: auto;
+  width: 60%;
 }
 
 h1 {
   font-size: 3em;  
 }
 
-a {
-}

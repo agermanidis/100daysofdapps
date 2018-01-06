@@ -13,7 +13,9 @@ import ReactLoading from "react-loading";
 
 import './index.css';
 
-const CONTRACT_ADDRESS = "0x1955a08c4f4e3edc8323b60f792ffc47141538a6";
+const CONTRACT_ADDRESSES = {
+  mainnet: "0x1955a08c4f4e3edc8323b60f792ffc47141538a6"
+}
 const GAS_LIMIT = 100000;
 
 class App extends SugarComponent {
@@ -30,7 +32,7 @@ class App extends SugarComponent {
 
   async componentDidMount() {
     console.log(this.props.web3);
-    const contractInstance = new this.props.web3.eth.Contract(contractABI, CONTRACT_ADDRESS);
+    const contractInstance = new this.props.web3.eth.Contract(contractABI, CONTRACT_ADDRESSES[this.props.network]);
     await this.setStateAsync({ contractInstance });
     await this.refreshInfo();
     setInterval(this.refreshPending.bind(this), 1000);
@@ -106,7 +108,7 @@ class App extends SugarComponent {
         </p>
         <p>
           <b>Friendship Smart Contract:</b>{" "}
-          <EtherscanAddressLink address={CONTRACT_ADDRESS}>
+          <EtherscanAddressLink address={CONTRACT_ADDRESSES[this.props.network]}>
             View on Etherscan
           </EtherscanAddressLink>
         </p>
@@ -115,5 +117,5 @@ class App extends SugarComponent {
   }
 }
 
-const Wrapped = () => <EthereumWrapper><App/></EthereumWrapper>
+const Wrapped = () => <EthereumWrapper supportedNetworks={Object.keys(CONTRACT_ADDRESSES)}><App/></EthereumWrapper>
 export default Wrapped;

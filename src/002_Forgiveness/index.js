@@ -218,6 +218,7 @@ class App extends SugarComponent {
         </div>
         <p>
           <EtherscanAddressLink
+            network={this.props.network}
             address={CONTRACT_ADDRESSES[this.props.network]}
             text="View contract on Etherscan"
           />
@@ -227,5 +228,5 @@ class App extends SugarComponent {
   }
 }
 
-const Wrapped = () => <EthereumWrapper><App/></EthereumWrapper>
+const Wrapped = () => <EthereumWrapper supportedNetworks={Object.keys(CONTRACT_ADDRESSES)}><App/></EthereumWrapper>
 export default Wrapped;

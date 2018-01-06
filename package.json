@@ -5,8 +5,10 @@
   "private": true,
   "dependencies": {
     "immutability-helper": "^2.6.2",
+    "js-sha256": "^0.9.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-icons": "^2.2.7",
     "react-loading": "^1.0.3",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",

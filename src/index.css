@@ -5,11 +5,6 @@ body {
   margin: 2em; 
 } 
 
-@font-face {
-  font-family: "Maran";
-  src: url("/Maran.ttf");
-}
-
 
 a {
   color: #337ab7; 
@@ -17,6 +12,7 @@ a {
 }
 
 .topbar {
+  text-align: center;
   color: white;
   font-size: 15px;
   position: absolute;
