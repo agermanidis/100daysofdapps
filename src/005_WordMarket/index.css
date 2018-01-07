@@ -1,0 +1,24 @@
+.word-definition {
+    font-size: 1em;
+}
+
+
+#wm-main {
+    margin: 3em;
+    text-align: center;
+}
+
+#wm-main input {
+
+    padding: 1em;
+    font-size: 18px;
+    outline: none;
+    margin: 1em 0;
+
+
+}
+
+#wm-main button {
+    font-size: 20px;
+    margin: 0em;
+}

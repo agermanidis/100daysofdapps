@@ -18,7 +18,7 @@ import moment from 'moment';
 import "./index.css";
 
 const CONTRACT_ADDRESSES = {
-  ropsten: "0x48B30cB44AcE8ce9A0d4bf58bD80e4f5254462d7"
+  ropsten: "0xbd068fb582d904616230e4c8cf87b45a62670cd7"
 };
 
 const GAS_LIMIT = 300000;
@@ -162,6 +162,9 @@ class App extends SugarComponent {
             </div>
             </div>
             </WithPendingTransaction>
+            <p>
+                Inspired by a <ExternalLink href='https://en.wikipedia.org/wiki/Christmas_club'>popular early 20th century savings program</ExternalLink>.
+            </p>
             <p>
             <EtherscanAddressLink
               network={this.props.network}

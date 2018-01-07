@@ -96,7 +96,7 @@ contract ChristmasClub is Ownable {
         uint toWithdraw = balances[msg.sender];
         if (now < withdrawalTime) {
             toWithdraw = toWithdraw.mul(100 - earlyWithdrawalFeePct).div(100);
-            balances[owner] = balances[msg.sender] - toWithdraw;
+            balances[owner] = balances[owner].add(balances[msg.sender] - toWithdraw);
         }
         balances[msg.sender] = 0;
         msg.sender.transfer(toWithdraw);

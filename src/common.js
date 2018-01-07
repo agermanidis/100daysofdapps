@@ -75,7 +75,11 @@ const TopBar = ({hasWeb3, network, isNetworkSupported, supportedNetworks, addres
         return <div className="topbar fail">
             No <a href="https://metamask.io/" target="_blank">
               Metamask extension
-            </a> detected. This site will be read-only.
+            </a> detected.{' '}
+            <ExternalLink href="https://www.youtube.com/watch?v=6Gf_kRE4MJU">
+              Here are instructions for how to install it.
+            </ExternalLink>{' '}
+            This site will be read-only.
           </div>;
     }
 }

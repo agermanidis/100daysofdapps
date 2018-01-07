@@ -12,6 +12,7 @@ import Day001 from "./001_Friendship";
 import Day002 from './002_Forgiveness';
 import Day003 from "./003_SecretKeeper";
 import Day004 from "./004_ChristmasClub";
+import Day005 from "./005_WordMarket";
 
 ReactDOM.render(
   <HashRouter>
@@ -21,6 +22,7 @@ ReactDOM.render(
       <Route path="/002_Forgiveness" component={Day002} />
       <Route path="/003_SecretKeeper" component={Day003} />
       <Route path="/004_ChristmasClub" component={Day004} />
+      <Route path="/005_WordMarket" component={Day005} />
     </Switch>
   </HashRouter>,
   document.getElementById("root")
