@@ -169,7 +169,9 @@ class App extends SugarComponent {
                 </p>
             </div>}
         </WithPendingTransaction>
-
+        <p>
+          H/T <ExternalLink href='https://twitter.com/baricks/status/950363741782241281'>Becca Ricks</ExternalLink> for the suggestion.
+        </p>
         <p>
           <EtherscanAddressLink network={this.props.network} address={CONTRACT_ADDRESSES[this.props.network]} text="View contract on Etherscan" />
         </p>
