@@ -69,7 +69,7 @@ const TopBar = ({hasWeb3, network, isNetworkSupported, supportedNetworks, addres
         )
     } else if (hasWeb3) {
         return <div className="topbar fail">
-            Metamask detected but network is not supported. Please switch to {joinOr(supportedNetworks)}. This site will be read-only.
+            Metamask detected but current network is not supported for this dapp. Please switch to {joinOr(supportedNetworks)}. This site will be read-only.
           </div>;
     } else {
         return <div className="topbar fail">

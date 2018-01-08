@@ -12,10 +12,9 @@ import {
 import contractABI from "./abi";
 
 import DictionaryIcon from './dictionary.ico';
+import dictionary from "./dictionary_top10k_abridged.json";
 
 import "./index.css";
-
-import dictionary from "./dictionary_top10k_abridged.json";
 
 const CONTRACT_ADDRESSES = {
   ropsten: "0x909bc123cc694e9e74c8aec6543c60b4eb6f5fdf"
@@ -84,7 +83,6 @@ class App extends SugarComponent {
   }
 
   async componentDidMount() {
-    console.log("here");
     await this.setupContract();
     setInterval(this.refreshPending.bind(this), 1000);
   }

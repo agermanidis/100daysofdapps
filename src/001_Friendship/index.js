@@ -14,8 +14,9 @@ import ReactLoading from "react-loading";
 import './index.css';
 
 const CONTRACT_ADDRESSES = {
-  mainnet: "0x1955a08c4f4e3edc8323b60f792ffc47141538a6"
-}
+  mainnet: "0x1955a08c4f4e3edc8323b60f792ffc47141538a6",
+  ropsten: "0xf754b62a7a3a9ad4c3b9a75c0a3f02dd0779a895"
+};
 const GAS_LIMIT = 100000;
 
 class App extends SugarComponent {

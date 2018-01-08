@@ -1,0 +1,28 @@
+
+#bw-main {
+    margin: 3em;
+    text-align: center;
+}
+
+#bw-main p {
+    font-size: 1.2em;
+}
+
+.bw-dropzone {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    width: 500px;
+    height: 300px;
+    border: 1px dashed gray;
+}
+
+.bw-dropzone p {
+    text-align: center;
+    margin: auto;
+}
+
+#bw-main button {
+    font-size: 20px;
+    margin: 0em;
+}

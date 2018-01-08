@@ -10,11 +10,6 @@ class App extends Component {
     return <div className="App">
         <img alt="Ethereum Logo" width={100} src={EthLogo} />
         <h1>100 Days of Ðapps</h1>
-        <p>
-          Note: Due to <ExternalLink href="https://ethgasstation.info/">
-            outrageous gas prices
-          </ExternalLink>, contracts will be deployed on the Ropsten test network, starting from day 3 and until situation improves.
-        </p>
         <h3>
           <p>
             1. <Link to="/001_Friendship">Friendship Contract</Link>
@@ -30,6 +25,9 @@ class App extends Component {
           </p>
           <p>
             5. <Link to="/005_WordMarket">Word Market</Link>
+          </p>
+          <p>
+            6. <Link to="/006_BlockchainWitness">Blockchain Witness</Link>
           </p>
         </h3>
         <ExternalLink href="https://github.com/agermanidis/100daysofdapps">
