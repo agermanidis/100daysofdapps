@@ -1,6 +1,7 @@
 body { 
   font-family: 'Roboto', sans-serif;
-  color: #333; 
+  /* color: #333;  */
+  color: #49555f;
   line-height: 1.25; 
   margin: 2em; 
 } 
@@ -83,7 +84,7 @@ a {
       font-size: 0.5em;
     }
 
-    a,p,div {
+    a, p, div {
         /* font-size: 0.7em; */
         text-overflow: ellipsis;
         vertical-align: middle;

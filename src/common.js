@@ -48,16 +48,65 @@ const joinOr = (arr) => {
     return arr.slice(0, arr.length - 1).join(', ') + ' or ' + arr.slice(arr.length-1);
 }
 
-const WithPendingTransaction = ({transaction, network, children}) => {
-    if (transaction) {
-        return (<span className="pending-tx">
-                Pending confirmation (might take a minute):{" "}
-                <EtherscanTxLink network={network} transaction={transaction} />
-                <ReactLoading className="loading" type="spin" color="#444" />
-              </span>);
-    } else {
-        return children;
+class WithPendingTransaction extends SugarComponent {
+  constructor() {
+    super();
+    this.state = {
+      transaction: null,
+      finished: false,
+      succeded: false
+    };
+  }
+
+  componentDidMount() {
+    setInterval(this.refreshPending.bind(this), 1000);
+  }
+
+  componentWillReceiveProps(props) {
+    if (props.transaction === this.props.transaction) return;
+    this.setState({ finished: false });
+  }
+
+  async refreshPending() {
+    console.log('refreshing', this.props);
+    if (this.props.transaction && !this.props.finished) {
+      const { web3, transaction } = this.props;
+      const receipt = await web3.eth.getTransactionReceipt(transaction);
+      if (receipt === null) return;
+      const succeded = receipt.status === "0x1";
+      await this.setStateAsync({ succeded, finished: true });
+      if (this.props.onFinish) this.props.onFinish();
     }
+  }
+
+  render() {
+    const { succeded, finished } = this.state;
+    const { transaction, network, children } = this.props;
+    const successMsg = this.props.successMsg || "Transaction succeded.";
+    const failMsg = this.props.successMsg || "Transaction failed.";
+
+    if (transaction) {
+      if (finished) {
+        return <div
+            className={`status-msg ${
+              succeded ? "success-text" : "fail-text"
+            }`}
+          >
+            {children}
+            <p>{succeded ? successMsg : failMsg}</p>
+          </div>;
+      }
+      return (
+        <span className="pending-tx">
+          Pending confirmation (might take a minute):{" "}
+          <EtherscanTxLink network={network} transaction={transaction} />
+          <ReactLoading className="loading" type="spin" color="#444" />
+        </span>
+      );
+    } else {
+      return children;
+    }
+  }
 }
 
 const TopBar = ({hasWeb3, network, isNetworkSupported, supportedNetworks, address}) => {

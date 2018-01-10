@@ -12,17 +12,17 @@ button {
     padding: 0.75em;
     border: 1px solid gray;
 }
-
+/* 
 p, button {
     font-size: 1.5em;
-}
+} */
 
 span {
     font-size: 1em;
 }
 
 button:hover:not([disabled]) {
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.05);
     cursor: pointer;
 }
 

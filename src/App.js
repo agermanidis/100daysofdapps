@@ -9,7 +9,8 @@ class App extends Component {
   render() {
     return <div className="App">
         <img alt="Ethereum Logo" width={100} src={EthLogo} />
-        <h1>100 Days of Ðapps</h1>
+        <h1>100 Days of ÐApps</h1>
+        <h3>Note: All ÐApps are deployed on the Ropsten test network.</h3>
         <h3>
           <p>
             1. <Link to="/001_Friendship">Friendship Contract</Link>
@@ -29,10 +30,18 @@ class App extends Component {
           <p>
             6. <Link to="/006_BlockchainWitness">Blockchain Witness</Link>
           </p>
+          <p>
+            7. <Link to="/007_PublicProfile">Public Profile</Link>
+          </p>
         </h3>
         <ExternalLink href="https://github.com/agermanidis/100daysofdapps">
           <FaGithub />View source on Github
         </ExternalLink>
+        <p>
+          An <ExternalLink href="http://agermanidis.com">
+            Anastasis Germanidis
+          </ExternalLink> project.
+        </p>
       </div>;
   }
 }

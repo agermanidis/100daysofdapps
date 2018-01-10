@@ -4,7 +4,9 @@
   "homepage": "https://agermanidis.github.io/100daysofdapps/",
   "private": true,
   "dependencies": {
+    "blob-to-buffer": "^1.2.6",
     "immutability-helper": "^2.6.2",
+    "ipfs-api": "^17.2.6",
     "js-sha256": "^0.9.0",
     "moment": "^2.20.1",
     "react": "^16.2.0",
@@ -19,7 +21,7 @@
   },
   "devDependencies": {
     "gh-pages": "^1.1.0",
-    "react-scripts": "1.0.17"
+    "react-scripts": "^1.0.17"
   },
   "scripts": {
     "start": "react-scripts start",

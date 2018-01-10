@@ -60,8 +60,6 @@ class App extends SugarComponent {
     if (!currentItemHash) return;
     // check if it already exists
       const exists = await contractInstance.methods.isVerified(currentItemHash).call();
-      console.log('exists', exists)
-
       if (exists) { 
         // get info
         const result = await contractInstance.methods.getInfo(currentItemHash).call();
@@ -91,16 +89,7 @@ class App extends SugarComponent {
       const { pendingTx, lastAction } = this.state;
       const receipt = await web3.eth.getTransactionReceipt(pendingTx);
       if (receipt === null) return;
-      const txSucceded = receipt.status === "0x1";
-      let statusMsg;
-      if (lastAction === "withdraw") {
-        if (txSucceded) statusMsg = "Withdrawn ether successfully.";
-        else statusMsg = "Failed to withdraw ether.";
-      } else {
-        if (txSucceded) statusMsg = "Deposited ether successfully.";
-        else statusMsg = "Failed to deposit ether.";
-      }
-      this.setState({ pendingTx: null, txSucceded, statusMsg });
+      this.setState({ pendingTx: null });
       await this.refreshDapp();
     }
   }
@@ -128,9 +117,7 @@ class App extends SugarComponent {
     reader.onload = async (e) => {
       // get sha256 digest of file
       const hash = '0x' + sha256(e.target.result);
-
       await this.setStateAsync({currentItemHash: hash});
-
       await this.refreshDapp();
     }
     reader.readAsBinaryString(files[0]);

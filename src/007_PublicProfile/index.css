@@ -1,0 +1,65 @@
+.profile-pic-dropzone {
+    border-radius: 50%;
+    border: 1px dashed gray;
+    width: 200px;
+    height: 200px;
+    margin: 2em auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-size: contain;
+
+
+}
+
+.has-image:hover {
+    opacity: 0.8;
+}
+
+.has-image > div {
+    display: none;
+}
+
+.has-image:hover > div {
+    display: block;
+}
+
+.profile-pic-dropzone div {
+    font-size: 1em !important;
+}
+
+#nickname-main input {
+    border: none;
+    border-bottom: 1px dashed gray;
+    outline: none;
+    font-size: 1.5em;
+    text-align: center;
+    margin: auto;
+    padding: 0.3em;
+}
+
+#nickname-main {
+    margin: 3em 0;
+    text-align: center;
+}
+
+#nickname-main button {
+    font-size: 20px;
+    margin: 0em;
+
+}
+
+#nickname-main  p{
+    margin: 2em 0;
+}
+
+#nickname-main code {
+    background: rgba(0, 0, 0, 0.1);
+    color: black;
+    font-weight: 100;
+    padding: 0.5em;
+    margin: 0 0.5em;
+}
+
+
