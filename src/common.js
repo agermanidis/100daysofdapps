@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Web3 from "web3";
 import { Link } from "react-router-dom";
 import ReactLoading from "react-loading";
+import ipfsAPI from "ipfs-api";
+import toBuffer from "blob-to-buffer";
 
 class SugarComponent extends Component {
   setStateAsync(state) {
@@ -81,9 +83,10 @@ class WithPendingTransaction extends SugarComponent {
 
   render() {
     const { succeded, finished } = this.state;
-    const { transaction, network, children } = this.props;
-    const successMsg = this.props.successMsg || "Transaction succeded.";
-    const failMsg = this.props.successMsg || "Transaction failed.";
+    let { transaction, network, children, successMsg, failMsg, pendingMsg, showLoader } = this.props;
+    successMsg = successMsg || "Transaction succeded.";
+    failMsg = failMsg || "Transaction failed.";
+    showLoader = showLoader === undefined ? true : showLoader;
 
     if (transaction) {
       if (finished) {
@@ -98,9 +101,9 @@ class WithPendingTransaction extends SugarComponent {
       }
       return (
         <span className="pending-tx">
-          Pending confirmation (might take a minute):{" "}
-          <EtherscanTxLink network={network} transaction={transaction} />
-          <ReactLoading className="loading" type="spin" color="#444" />
+          {pendingMsg ? pendingMsg : <span>Pending confirmation (might take a minute):{" "}
+          <EtherscanTxLink network={network} transaction={transaction} /></span>}
+          {showLoader && <ReactLoading className="loading" type="spin" color="#444" />}
         </span>
       );
     } else {
@@ -224,6 +227,32 @@ class EthereumWrapper extends Component {
   }
 }
 
+const ipfs = ipfsAPI("ipfs.infura.io", "5001", { protocol: "https" });
+
+const ipfsURL = hash => `https://ipfs.infura.io/ipfs/${hash}`;
+
+const uploadFileToIpfs = (file) => {
+  return new Promise((resolve, reject) => {
+    toBuffer(file, (err, buf) => {
+      ipfs.files.add(buf, (err, resp) => {
+        if (err) return reject();
+        resolve(resp[0].hash);
+      });
+    });
+  });
+}
+
+const uploadStringToIpfs = async (str) => {
+  const resp = await ipfs.files.add([new Buffer(str)]);
+  return resp[0].hash;
+};
+
+const ipfsCat = async (hash) => {
+  const decoder = new TextDecoder("utf-8");
+  const content = await ipfs.files.cat(hash);
+  return decoder.decode(content);
+}
+
 export {
   truncate,
   BackButton,
@@ -234,5 +263,9 @@ export {
   getEtherscanTxUrl,
   EtherscanTxLink,
   EtherscanAddressLink,
-  WithPendingTransaction
+  WithPendingTransaction,
+  uploadFileToIpfs,
+  uploadStringToIpfs,
+  ipfsURL,
+  ipfsCat
 };

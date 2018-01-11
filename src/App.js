@@ -33,6 +33,9 @@ class App extends Component {
           <p>
             7. <Link to="/007_PublicProfile">Public Profile</Link>
           </p>
+          <p>
+            8. <Link to="/008_DecentralizedWiki">Decentralized Wiki</Link>
+          </p>
         </h3>
         <ExternalLink href="https://github.com/agermanidis/100daysofdapps">
           <FaGithub />View source on Github

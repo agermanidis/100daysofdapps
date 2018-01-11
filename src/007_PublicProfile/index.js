@@ -7,14 +7,14 @@ import {
   EtherscanTxLink,
   EtherscanAddressLink,
   truncate,
-  WithPendingTransaction
+  WithPendingTransaction,
+  uploadFileToIpfs,
+  ipfsURL
 } from "../common";
 import contractABI from "./abi";
 import Dropzone from "react-dropzone";
 import FaFileImageO from "react-icons/lib/fa/file-image-o";
 import FaEdit from 'react-icons/lib/fa/edit';
-import ipfsAPI from "ipfs-api";
-import toBuffer from "blob-to-buffer";
 
 import "./index.css";
 
@@ -23,10 +23,6 @@ const CONTRACT_ADDRESSES = {
 };
 
 const GAS_LIMIT = 300000;
-
-const ipfs = ipfsAPI("ipfs.infura.io", "5001", { protocol: "https" }); 
-
-const ipfsURL = hash => `https://ipfs.io/ipfs/${hash}`;
 
 class App extends SugarComponent {
   constructor() {
@@ -76,23 +72,14 @@ class App extends SugarComponent {
     });
   }
 
-  async uploadToIpfs(file) {
-    return new Promise((resolve, reject) => {
-      toBuffer(file, (err, buf) => {
-        ipfs.files.add(buf, (err, resp) => {
-          if (err) return reject();
-          resolve(resp[0].hash);
-        });
-      });
-    });
-  }
+  
 
   async save() {
     const { address } = this.props;
     const { contractInstance, name, imageFile } = this.state;
     let tx;
     if (imageFile) {
-      const hash = await this.uploadToIpfs(imageFile);
+      const hash = await uploadFileToIpfs(imageFile);
       tx = contractInstance.methods.setInfo(name, hash);
     } else {
       tx = contractInstance.methods.setNickname(name);
@@ -127,6 +114,7 @@ class App extends SugarComponent {
           <ExternalLink href="https://ipfs.io/">IPFS</ExternalLink>, a
           decentralized storage network.
         </h3>
+
 
         <div>
           <Dropzone
