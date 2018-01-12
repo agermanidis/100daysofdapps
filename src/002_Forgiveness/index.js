@@ -10,6 +10,7 @@ import {
 } from "../common";
 import contractABI from "./abi";
 import ReactLoading from "react-loading";
+import { Link } from "react-router-dom";
 
 import './index.css';
 
@@ -36,7 +37,6 @@ class App extends SugarComponent {
   }
 
   async componentDidMount() {
-    console.log(this.props);
     const contractInstance = new this.props.web3.eth.Contract(
       contractABI,
       CONTRACT_ADDRESSES[this.props.network]

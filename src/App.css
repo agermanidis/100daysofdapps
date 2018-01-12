@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  text-align: left;
   margin: auto;
   width: 60%;
 }
@@ -8,4 +8,7 @@ h1 {
   font-size: 3em;  
 }
 
-
+small {
+  color: gray;
+  margin-right: 0.75em;
+}

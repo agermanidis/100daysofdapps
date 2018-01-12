@@ -13,6 +13,7 @@ import contractABI from "./abi";
 import { sha256 } from "js-sha256";
 import Dropzone from "react-dropzone";
 import moment from 'moment';
+import { Link } from "react-router-dom";
 
 import FaFileO from "react-icons/lib/fa/file-o";
 
@@ -151,13 +152,15 @@ class App extends SugarComponent {
                 </p>
               </Dropzone> : <div>
               <FileViewer file={currentItemFile} />
-                <p>
-                  File was timestamped by <EtherscanAddressLink address={currentItemOwner} network={this.props.network} /> on {moment(currentItemTimestamp*1000).toString()}.
-                </p>
+              <p>
+                File was timestamped by <EtherscanAddressLink address={currentItemOwner} network={this.props.network} /> on {moment(currentItemTimestamp * 1000).toString()}.
+              </p>
             </div>}
         </WithPendingTransaction>
         <p>
-          H/T <ExternalLink href='https://twitter.com/baricks/status/950363741782241281'>Becca Ricks</ExternalLink> for the suggestion.
+          H/T <ExternalLink href="https://twitter.com/baricks/status/950363741782241281">
+            Becca Ricks
+          </ExternalLink> for the suggestion.
         </p>
         <p>
           <EtherscanAddressLink network={this.props.network} address={CONTRACT_ADDRESSES[this.props.network]} text="View contract on Etherscan" />

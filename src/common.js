@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import ReactLoading from "react-loading";
 import ipfsAPI from "ipfs-api";
 import toBuffer from "blob-to-buffer";
+import FaHome from 'react-icons/lib/fa/home';
 
 class SugarComponent extends Component {
   setStateAsync(state) {
@@ -90,13 +91,11 @@ class WithPendingTransaction extends SugarComponent {
 
     if (transaction) {
       if (finished) {
-        return <div
-            className={`status-msg ${
-              succeded ? "success-text" : "fail-text"
-            }`}
-          >
+        return <div>
             {children}
-            <p>{succeded ? successMsg : failMsg}</p>
+            <p className={`status-msg ${succeded ? "success-text" : "fail-text"}`}>
+              {succeded ? successMsg : failMsg}
+            </p>
           </div>;
       }
       return (
@@ -121,7 +120,7 @@ const TopBar = ({hasWeb3, network, isNetworkSupported, supportedNetworks, addres
         )
     } else if (hasWeb3) {
         return <div className="topbar fail">
-            Metamask detected but current network is not supported for this dapp. Please switch to {joinOr(supportedNetworks)}. This site will be read-only.
+            Metamask detected but current network is not supported. Switch to {joinOr(supportedNetworks)}. Read-only.
           </div>;
     } else {
         return <div className="topbar fail">
@@ -138,7 +137,7 @@ const TopBar = ({hasWeb3, network, isNetworkSupported, supportedNetworks, addres
 
 const BackButton = () => {
     return <Link to="/" className="back-button">
-        ← Back
+        <FaHome/> Home
       </Link>;
 }
 
@@ -221,6 +220,7 @@ class EthereumWrapper extends Component {
           supportedNetworks={this.props.supportedNetworks}
         />
         <BackButton />
+        
         {childrenWithProp}
       </div>
     );

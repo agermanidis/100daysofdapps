@@ -1,0 +1,40 @@
+#rtp-main {
+    width: 75%;
+    height: 100%;
+    text-align: center;
+    margin: 3em auto 0 auto;
+    
+}
+
+#rtp-main #rtp-page {
+    padding: 1em;
+    min-height: 400px;
+}
+
+#rtp-main canvas {
+    /* width: 500px; */
+    /* height: 400px; */
+    border: 1px solid black;
+    user-select: none;
+    
+}
+
+.locked {
+    cursor: url(/lockIcon.png) 16 16, auto;
+}
+
+#rtp-main #tools {
+    margin: 0 1em;
+}
+
+#rtp-main #canvas-wrapper {
+    display: flex;
+}
+
+
+#rent-hours-input {
+    width: 50px;
+    padding: 0.5em;
+    font-size: 1em;
+    outline: none;
+}

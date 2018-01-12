@@ -12,6 +12,7 @@ import {
 import contractABI from "./abi";
 import { sha256 } from 'js-sha256';
 import SantaHat from './santahat.png';
+import { Link } from "react-router-dom";
 
 import moment from 'moment';
 
@@ -125,54 +126,65 @@ class App extends SugarComponent {
 
     render () {
         const {balance, pendingTx} = this.state;
-        return <div id='cc-main'>
-            <div id='cc-head'>
-            <img width={100} src={SantaHat} />
-            <h1>Christmas Club</h1>
-            <p>Safely deposit Ether throughout the year.</p>
-            <p>Retrieve it on December 1st, 2018, just in time for Christmas season.</p>
-            <p>Prevent yourself from reckless spending throughout the year.</p>
-            <p>There is a 3% fee if you withdraw early.</p>
+        return <div id="cc-main">
+            <div id="cc-head">
+              <img width={100} src={SantaHat} />
+              <h1>Christmas Club</h1>
+              <p>Safely deposit Ether throughout the year.</p>
+              <p>
+                Retrieve it on December 1st, 2018, just in time for
+                Christmas season.
+              </p>
+              <p>
+                Prevent yourself from reckless spending throughout the
+                year.
+              </p>
+              <p>There is a 3% fee if you withdraw early.</p>
             </div>
-            <p>Countdown: {
-                this.isPastWithdrawalTime()
-                ? (<b>It's time to withdraw!</b>)
-                : (<b>{this.countdown()}</b>)
-            }</p>
+            <p>
+              Countdown:{" "}
+              {this.isPastWithdrawalTime() ? (
+                <b>It's time to withdraw!</b>
+              ) : (
+                <b>{this.countdown()}</b>
+              )}
+            </p>
             <WithPendingTransaction transaction={pendingTx}>
-            <div id='cc-body'>
-            <div><p>Your Balance: <b>{this.props.web3.utils.fromWei(balance.toString())} ether</b></p>
-            <button 
-                    disabled={!this.props.isNetworkSupported} 
-                    onClick={this.withdraw.bind(this)}>
-                    {this.isPastWithdrawalTime() ? 'Make Withdrawal' : 'Make Early Withdrawal (3% fee)'}
-                </button>
-            </div><div>
-                <p>Deposit:{' '} 
-                    <input 
-                        ref={(el) => {this._inputEl = el }} 
-                        type="number" 
-                        step="0.1" 
-                        placeholder='Enter amount...' /> ether</p>
-                <button 
-                    disabled={!this.props.isNetworkSupported} 
-                    onClick={this.deposit.bind(this)}>
+              <div id="cc-body">
+                <div>
+                  <p>
+                    Your Balance: <b>
+                      {this.props.web3.utils.fromWei(
+                        balance.toString()
+                      )}{" "}
+                      ether
+                    </b>
+                  </p>
+                  <button disabled={!this.props.isNetworkSupported} onClick={this.withdraw.bind(this)}>
+                    {this.isPastWithdrawalTime() ? "Make Withdrawal" : "Make Early Withdrawal (3% fee)"}
+                  </button>
+                </div>
+                <div>
+                  <p>
+                    Deposit: <input ref={el => {
+                        this._inputEl = el;
+                      }} type="number" step="0.1" placeholder="Enter amount..." /> ether
+                  </p>
+                  <button disabled={!this.props.isNetworkSupported} onClick={this.deposit.bind(this)}>
                     Make Deposit
-                </button> 
-            </div>
-            </div>
+                  </button>
+                </div>
+              </div>
             </WithPendingTransaction>
             <p>
-                Inspired by a <ExternalLink href='https://en.wikipedia.org/wiki/Christmas_club'>popular early 20th century savings program</ExternalLink>.
+              Inspired by a <ExternalLink href="https://en.wikipedia.org/wiki/Christmas_club">
+                popular early 20th century savings program
+              </ExternalLink>.
             </p>
             <p>
-            <EtherscanAddressLink
-              network={this.props.network}
-              address={CONTRACT_ADDRESSES[this.props.network]}
-              text="View contract on Etherscan"
-            />
+              <EtherscanAddressLink network={this.props.network} address={CONTRACT_ADDRESSES[this.props.network]} text="View contract on Etherscan" />
             </p>
-        </div>
+          </div>;
     }
 }
 

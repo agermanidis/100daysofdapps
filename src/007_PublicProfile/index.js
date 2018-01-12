@@ -15,6 +15,7 @@ import contractABI from "./abi";
 import Dropzone from "react-dropzone";
 import FaFileImageO from "react-icons/lib/fa/file-image-o";
 import FaEdit from 'react-icons/lib/fa/edit';
+import { Link } from "react-router-dom";
 
 import "./index.css";
 
@@ -96,77 +97,44 @@ class App extends SugarComponent {
   render() {
     const { name, image, pendingTx } = this.state;
 
-    return (
-      <div id="nickname-main">
+    return <div id="nickname-main">
         <h1>Public Profile</h1>
         <h3>Attach a nickname and picture to your Ethereum address.</h3>
         <h3>
-          Any other ÐApp can use it by calling{" "}
-          <code>getInfo({"<address>"})</code> on{" "}
-          <EtherscanAddressLink
-            network={this.props.network}
-            address={CONTRACT_ADDRESSES[this.props.network]}
-            text="this contract"
-          />.
+          Any other ÐApp can use it by calling <code>
+            getInfo({"<address>"})
+          </code> on <EtherscanAddressLink network={this.props.network} address={CONTRACT_ADDRESSES[this.props.network]} text="this contract" />.
         </h3>
         <h3>
-          The picture will be stored on{" "}
-          <ExternalLink href="https://ipfs.io/">IPFS</ExternalLink>, a
-          decentralized storage network.
+          The picture will be stored on <ExternalLink href="https://ipfs.io/">
+            IPFS
+          </ExternalLink>, a decentralized storage network.
         </h3>
 
-
         <div>
-          <Dropzone
-            style={{ backgroundImage: `url(${image})` }}
-            accept="image/*"
-            className={`profile-pic-dropzone ${image && "has-image"}`}
-            onDrop={this.onDrop.bind(this)}
-          >
+          <Dropzone style={{ backgroundImage: `url(${image})` }} accept="image/*" className={`profile-pic-dropzone ${image && "has-image"}`} onDrop={this.onDrop.bind(this)}>
             <div style={{ color: "gray" }}>
-              {image ? (
-                <div className="reveal-when-hover">
+              {image ? <div className="reveal-when-hover">
                   <FaEdit /> Change
-                </div>
-              ) : (
-                <div>
+                </div> : <div>
                   <FaFileImageO /> Upload picture
-                </div>
-              )}
+                </div>}
             </div>
           </Dropzone>
         </div>
         <p>
-          <input
-            onChange={this.onNameChange.bind(this)}
-            type="text"
-            placeholder="nickname"
-            value={name}
-          />
+          <input onChange={this.onNameChange.bind(this)} type="text" placeholder="nickname" value={name} />
         </p>
 
-        <WithPendingTransaction
-            web3={this.props.web3}
-            successMsg={'Updated profile.'}
-            failMsg={'Failed to update profile'}
-            transaction={pendingTx}
-            onFinish={this.refreshDapp.bind(this)}>
-          <button
-            disabled={!this.props.isNetworkSupported || !name}
-            onClick={this.save.bind(this)}
-          >
+        <WithPendingTransaction web3={this.props.web3} successMsg={"Updated profile."} failMsg={"Failed to update profile"} transaction={pendingTx} onFinish={this.refreshDapp.bind(this)}>
+          <button disabled={!this.props.isNetworkSupported || !name} onClick={this.save.bind(this)}>
             Save Information
           </button>
         </WithPendingTransaction>
         <p>
-          <EtherscanAddressLink
-            network={this.props.network}
-            address={CONTRACT_ADDRESSES[this.props.network]}
-            text="View contract on Etherscan"
-          />
+          <EtherscanAddressLink network={this.props.network} address={CONTRACT_ADDRESSES[this.props.network]} text="View contract on Etherscan" />
         </p>
-      </div>
-    );
+      </div>;
   }
 }
 

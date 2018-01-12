@@ -8,33 +8,45 @@ import FaGithub from 'react-icons/lib/fa/github';
 class App extends Component {
   render() {
     return <div className="App">
-        <img alt="Ethereum Logo" width={100} src={EthLogo} />
-        <h1>100 Days of ÐApps</h1>
-        <h3>Note: All ÐApps are deployed on the Ropsten test network.</h3>
+        <h1>100 Days of Dapps</h1>
+        <h3>Every day, I will make a new decentralized application.</h3>
+        <h3>Note: All dapps are deployed on the Ropsten test network.</h3>
         <h3>
           <p>
-            1. <Link to="/001_Friendship">Friendship Contract</Link>
+            <small>Day 1</small>
+            <Link to="/001_Friendship">Friendship Contract</Link>
           </p>
           <p>
-            2. <Link to="/002_Forgiveness">Blockchain Confessional</Link>
+            <small>Day 2</small>
+            <Link to="/002_Forgiveness">Blockchain Confessional</Link>
           </p>
           <p>
-            3. <Link to="/003_SecretKeeper">Secret Keeper</Link>
+            <small>Day 3</small>
+            <Link to="/003_SecretKeeper">Secret Keeper</Link>
           </p>
           <p>
-            4. <Link to="/004_ChristmasClub">Christmas Club</Link>
+            <small>Day 4</small>
+            <Link to="/004_ChristmasClub">Christmas Club</Link>
           </p>
           <p>
-            5. <Link to="/005_WordMarket">Word Market</Link>
+            <small>Day 5</small>
+            <Link to="/005_WordMarket">Word Market</Link>
           </p>
           <p>
-            6. <Link to="/006_BlockchainWitness">Blockchain Witness</Link>
+            <small>Day 6</small>
+            <Link to="/006_BlockchainWitness">Blockchain Witness</Link>
           </p>
           <p>
-            7. <Link to="/007_PublicProfile">Public Profile</Link>
+            <small>Day 7</small>
+            <Link to="/007_PublicProfile">Public Profile</Link>
           </p>
           <p>
-            8. <Link to="/008_DecentralizedWiki">Decentralized Wiki</Link>
+            <small>Day 8</small>
+            <Link to="/008_DecentralizedWiki">Decentralized Wiki</Link>
+          </p>
+          <p>
+            <small>Day 9</small>
+            <Link to="/009_RentThisCanvas">Rent this Canvas</Link>
           </p>
         </h3>
         <ExternalLink href="https://github.com/agermanidis/100daysofdapps">

@@ -10,6 +10,7 @@ import {
   WithPendingTransaction
 } from "../common";
 import contractABI from "./abi";
+import { Link } from "react-router-dom";
 
 import DictionaryIcon from './dictionary.ico';
 import dictionary from "./dictionary_top10k_abridged.json";
@@ -156,10 +157,14 @@ class App extends SugarComponent {
                     Create Token
                   </button>
                 </div> : <div>
-                  {currentTokenOwnedByMe ? <p>You own the token for "{currentWord}."</p> : <p>
+                  {currentTokenOwnedByMe ? <p>
+                      You own the token for "{currentWord}."
+                    </p> : <p>
                       This word is owned by <EtherscanAddressLink network={this.props.network} address={currentTokenOwner} />.
                     </p>}
-                  <p><small>Token ID: {currentTokenId}</small></p>
+                  <p>
+                    <small>Token ID: {currentTokenId}</small>
+                  </p>
                 </div>}
             </WithPendingTransaction>
           </div>}

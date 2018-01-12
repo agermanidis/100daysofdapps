@@ -19,6 +19,7 @@ import FaFileTextO from "react-icons/lib/fa/file-text-o";
 import FaEdit from 'react-icons/lib/fa/edit';
 import FaHistory from 'react-icons/lib/fa/history';
 import moment from 'moment';
+import { Link } from "react-router-dom";
 
 import "./index.css";
 import "react-tabs/style/react-tabs.css";
@@ -163,44 +164,40 @@ class App extends SugarComponent {
             <EditPage onChange={evt => this.setState({
                   changed: evt.target.value
                 })} original={content} changed={changed} />
-            <WithPendingTransaction
-                web3={this.props.web3}
-                transaction={pendingSaveTx}
-                onFinish={this.refreshDapp.bind(this)}>
-            <button 
-                onClick={this.makeChanges.bind(this)}
-                disabled={!this.props.isNetworkSupported || changed === content}>
-              Make Changes
-            </button>
-            <button 
-                style={{marginLeft: '1em'}}
-                onClick={() => this.setState({ changed: content })}>
-              Reset
-            </button>
+            <WithPendingTransaction web3={this.props.web3} transaction={pendingSaveTx} onFinish={this.refreshDapp.bind(this)}>
+              <button onClick={this.makeChanges.bind(this)} disabled={!this.props.isNetworkSupported || changed === content}>
+                Make Changes
+              </button>
+              <button style={{ marginLeft: "1em" }} onClick={() => this.setState(
+                    { changed: content }
+                  )}>
+                Reset
+              </button>
             </WithPendingTransaction>
           </TabPanel>
           <TabPanel>
-              <table id='revisions-table'>
+            <table id="revisions-table">
               <tr>
-                  <th>IPFS URL</th>
-                  <th>Timestamp</th>
-                  <th>Address</th>
+                <th>IPFS URL</th>
+                <th>Timestamp</th>
+                <th>Address</th>
               </tr>
-              <br/>
+              <br />
               {revisions.map((rev, idx) => {
-                  return (
-                    <tr>
-                        <td><ExternalLink href={ipfsURL(rev.ipfsHash)}>
-                            {truncate(rev.ipfsHash)}
-                        </ExternalLink></td>
-                        <td>{rev.timestamp}</td>
-                        <td><EtherscanAddressLink network={this.props.network} address={rev.address}/></td>
-                    </tr>
-                  )
+                return <tr>
+                    <td>
+                      <ExternalLink href={ipfsURL(rev.ipfsHash)}>
+                        {truncate(rev.ipfsHash)}
+                      </ExternalLink>
+                    </td>
+                    <td>{rev.timestamp}</td>
+                    <td>
+                      <EtherscanAddressLink network={this.props.network} address={rev.address} />
+                    </td>
+                  </tr>;
               })}
-              </table>
+            </table>
           </TabPanel>
-
         </Tabs>
         <p>
           <EtherscanAddressLink network={this.props.network} address={CONTRACT_ADDRESSES[this.props.network]} text="View contract on Etherscan" />

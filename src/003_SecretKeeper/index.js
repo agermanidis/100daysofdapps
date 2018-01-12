@@ -11,7 +11,7 @@ import {
 } from "../common";
 import contractABI from "./abi";
 import { sha256 } from 'js-sha256';
-
+import { Link } from "react-router-dom";
 import FaLock from 'react-icons/lib/fa/lock';
 import FaUnlock from 'react-icons/lib/fa/unlock';
 
