@@ -10,5 +10,6 @@ h1 {
 
 small {
   color: gray;
+  display: inline-block;
   margin-right: 0.75em;
 }

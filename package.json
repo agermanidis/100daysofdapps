@@ -6,7 +6,7 @@
   "dependencies": {
     "blob-to-buffer": "^1.2.6",
     "diff": "^3.4.0",
-    "immutability-helper": "^2.6.2",
+    "immutability-helper": "^2.6.4",
     "ipfs-api": "^17.2.6",
     "js-sha256": "^0.9.0",
     "moment": "^2.20.1",

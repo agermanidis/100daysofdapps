@@ -9,7 +9,10 @@ class App extends Component {
   render() {
     return <div className="App">
         <h1>100 Days of Dapps</h1>
-        <h3>Every day, I will make a new decentralized application.</h3>
+        <h3>
+          Every day, I will make a new decentralized application on the
+          Ethereum blockchain.
+        </h3>
         <h3>Note: All dapps are deployed on the Ropsten test network.</h3>
         <h3>
           <p>
@@ -47,6 +50,10 @@ class App extends Component {
           <p>
             <small>Day 9</small>
             <Link to="/009_RentThisCanvas">Rent this Canvas</Link>
+          </p>
+          <p>
+            <small>Day 10</small>
+            <Link to="/010_BackgroundColorDemocracy">Background Color Democracy</Link>
           </p>
         </h3>
         <ExternalLink href="https://github.com/agermanidis/100daysofdapps">

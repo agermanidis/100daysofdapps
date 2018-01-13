@@ -1,0 +1,61 @@
+#bcd-content {
+    display: flex;
+    width: 50%;
+    padding: 1em;
+}
+
+#bcd-content > * {
+    flex: 1;
+    max-width: 50%;
+    
+}
+
+* {
+        word-wrap: break-word;
+    
+}
+
+#bcd-main {
+    padding: 1em 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sketch-picker {
+    box-shadow: none;
+}
+
+.proposal {
+    font-size: 0.9em;
+    margin: 1em;
+    padding: 0.5em;
+}
+
+.proposal p {
+    font-size: 1em;
+}
+
+.proposal button {
+    font-size: 0.9em;
+
+}
+
+.color-square {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0.5em;
+}
+
+.proposal:nth-child(even) {
+    background: rgba(0, 0, 0, 0.05);
+}

@@ -64,7 +64,6 @@ class App extends SugarComponent {
       color: { r: 96, g: 125, b: 139 },
       currentRentier: ZERO_ADDRESS,
       contentHash: null,
-      revisions: [],
       rentForHours: 1,
       pendingSaveTx: null,
       pendingRentTx: null
