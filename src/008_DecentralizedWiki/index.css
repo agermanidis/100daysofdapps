@@ -62,7 +62,7 @@
     font-size: 1em;
 }
 
-textarea { 
+#dw-main textarea { 
     font-size: 1em;
     flex: 1;
     resize: none;

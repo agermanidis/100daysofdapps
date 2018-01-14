@@ -70,6 +70,10 @@ const Proposal = ({ id, yayVotes, nayVotes, hasVoted, color, votingDeadline, onV
             </button>
             {hasVoted && <span>You already voted</span>}
         </WithPendingTransaction>
+        <p>
+          <EtherscanAddressLink network={this.props.network} address={CONTRACT_ADDRESSES[this.props.network]} text="View contract on Etherscan" />
+        </p>
+        
       </div>;
 }
 

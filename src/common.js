@@ -71,7 +71,6 @@ class WithPendingTransaction extends SugarComponent {
   }
 
   async refreshPending() {
-    console.log('refreshing', this.props);
     if (this.props.transaction && !this.props.finished) {
       const { web3, transaction } = this.props;
       const receipt = await web3.eth.getTransactionReceipt(transaction);

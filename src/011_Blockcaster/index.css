@@ -1,0 +1,108 @@
+#su-main {
+    width: 75%;
+    height: 100%;
+    text-align: center;
+    margin: 3em auto 0 auto;
+
+}
+
+#su-main textarea {
+    outline: none;
+    font-size: 1.25em;
+    border: none;
+    width: 100%;
+    margin: 1em;
+    height: 50px;
+    resize: none;
+}
+
+#su-main button {
+    font-size: 1em;
+    border-radius: 5px;
+    border-style: solid;
+}
+
+#su-main .img-drop {
+    cursor: pointer;
+    display: inline-block;
+    /* position: relative; */
+    /* left: -50px;     */
+    margin-right: 25px;
+}
+
+.img-drop svg {
+    width: 20px;
+    height: 20px;
+}
+
+#su-main #input-container {
+    font-size: 0.75em;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    width: 75%;
+    margin: 1em auto;
+    text-align: left;
+}
+
+#input-container img {
+    margin: 1em;
+    border: 1px solid lightgray;
+    height: 100px;
+}
+
+#su-main #input-container-box {
+    display: flex;
+    align-items: center;
+
+}
+
+#su-main .msg-limit {
+    margin: 1em;
+    color: gray;
+}
+
+#statuses {
+    margin: 1em;
+}
+
+.status{ 
+    display: flex;
+    margin: 1em auto;
+    text-align: left;
+    width: 50%;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding: 1em;
+
+}
+
+.status .picture,.identicon {
+
+    width: 50px !important;
+    height: 50px !important;
+    float: left;
+    background: red;
+    margin: 0.75em;
+    border: none;
+    border-radius: 50%;
+}
+
+.status .image {
+    max-width: 200px;
+    margin: 0.5em 0;    
+}
+
+.status a {
+    margin-left: 1em;
+    font-size: 13px;
+}
+
+.status .message {
+    margin-top: 0.5em;
+}
+
+.status .time {
+    font-size: 13px;
+    color: gray;
+    margin-top: 1em;
+}

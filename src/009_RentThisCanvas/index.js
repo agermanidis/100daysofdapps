@@ -119,7 +119,7 @@ class App extends SugarComponent {
     // const imageArray = new Uint8Array(buffer);
 
     const cb = async (result) => {
-      const hash = await uploadFileToIpfs(result);
+     const hash = await uploadFileToIpfs(result);
      contractInstance.methods
       .setContent(hash)
       .send({
