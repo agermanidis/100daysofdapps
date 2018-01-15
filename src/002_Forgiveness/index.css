@@ -2,7 +2,7 @@ body {
     /* background: linear-gradient(0deg,#ffe7fa,#e6ffff,#ffffe6); */
 }
 
-#main {
+#forgiveness-main {
     margin: 2em;
     /* text-align: center; */
     margin-top: 5em;
@@ -51,7 +51,7 @@ button:active {
     max-height: 15px;
 }
 
-li {
+#forgiveness-main li {
     font-size: 1.25em;
     list-style: none;
     margin: 0.6em 0;
@@ -71,7 +71,7 @@ blockquote {
 
 }
 
-ul {
+#forgiveness-main ul {
     margin: 3em;
     display: block;
 }

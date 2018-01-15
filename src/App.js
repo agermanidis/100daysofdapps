@@ -59,15 +59,15 @@ class App extends Component {
           </p>
           <p>
             <small>Day 11</small>
-            <Link to="/011_Blockcaster">
-              Blockcaster
-            </Link>
+            <Link to="/011_Blockcaster">Blockcaster</Link>
           </p>
           <p>
             <small>Day 12</small>
-            <Link to="/012_Autocracy">
-              Autocracy
-            </Link>
+            <Link to="/012_Autocracy">Autocracy</Link>
+          </p>
+          <p>
+            <small>Day 13</small>
+            <Link to="/013_BurnEther">Burn Ether</Link>
           </p>
         </h3>
         <ExternalLink href="https://github.com/agermanidis/100daysofdapps">

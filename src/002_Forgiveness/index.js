@@ -87,7 +87,7 @@ class App extends SugarComponent {
 
   render() {
     return (
-      <div id="main" style={{ textAlign: "center" }}>
+      <div id="forgiveness-main" style={{ textAlign: "center" }}>
         <img width={200} src={Church} />
         <br/>
         <img height={75} src={Title}  />

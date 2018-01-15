@@ -242,6 +242,7 @@ class App extends SugarComponent {
               </WithPendingTransaction>
             </div>
           </div>}
+
       </div>;
   }
 }
@@ -249,7 +250,7 @@ class App extends SugarComponent {
 const Wrapped = () => (
   <EthereumWrapper
     mainNetwork="ropsten"
-    supportedNetworks={['ropsten']}>
+    supportedNetworks={Object.keys(CONTRACT_ADDRESSES_REGISTRY)}>
     <App />
   </EthereumWrapper>
 );

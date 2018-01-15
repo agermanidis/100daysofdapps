@@ -1,0 +1,21 @@
+#burn-main {
+    width: 75%;
+    height: 100%;
+    margin: 3em auto 0 auto;
+  
+}
+
+#burn-main {
+    font-size: 1.1em;
+}
+
+#burn-main input {
+    width: 150px;
+    border: none;
+    border-bottom: 1px dashed gray;
+    outline: none;
+    font-size: 1.5em;
+    text-align: center;
+    margin: auto;
+    padding: 0.3em;    
+}
