@@ -19,6 +19,7 @@ import Day008 from "./008_DecentralizedWiki";
 import Day009 from "./009_RentThisCanvas";
 import Day010 from './010_BackgroundColorDemocracy';
 import Day011 from "./011_Blockcaster";
+import Day012 from "./012_Autocracy";
 
 ReactDOM.render(
   <HashRouter>
@@ -35,6 +36,7 @@ ReactDOM.render(
       <Route path="/009_RentThisCanvas" component={Day009} />
       <Route path="/010_BackgroundColorDemocracy" component={Day010} />
       <Route path="/011_Blockcaster" component={Day011} />
+      <Route path="/012_Autocracy" component={Day012} />
     </Switch>
   </HashRouter>,
   document.getElementById("root")

@@ -63,6 +63,12 @@ class App extends Component {
               Blockcaster
             </Link>
           </p>
+          <p>
+            <small>Day 12</small>
+            <Link to="/012_Autocracy">
+              Autocracy
+            </Link>
+          </p>
         </h3>
         <ExternalLink href="https://github.com/agermanidis/100daysofdapps">
           <FaGithub />View source on Github

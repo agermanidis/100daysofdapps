@@ -1,0 +1,83 @@
+.flag {
+    transform: scale(0.5);
+}
+
+#aut-main {
+    width: 75%;
+    height: 100%;
+    text-align: center;
+    margin: 3em auto 0 auto;
+    
+}
+
+#regenerate-flag {
+    font-size: 0.6em;
+
+}
+
+#flag-container {
+    margin: -3em;   
+}
+
+#not-exists #create-country input {
+    border: none;
+    border-bottom: 1px dashed gray;
+    outline: none;
+    font-size: 1.5em;
+    text-align: center;
+    margin: auto;
+    padding: 0.3em;    
+}
+
+button:disabled {
+    color: gray;
+}
+
+#aut-main #total-supply {
+    color: gray;
+}
+
+#aut-main input {
+    border: none;
+    border-bottom: 1px dashed gray;
+    outline: none;
+    font-size: 0.75em;
+    text-align: center;
+    margin: auto;
+    padding: 0.3em;  
+    margin-right: 1em;  
+}
+
+#add-citizen {
+    width: 300px;
+}
+
+#aut-main button {
+    font-size: 0.75em;
+}
+
+
+#citizens {
+    margin: 1em;
+}
+
+#citizens > div {
+    margin: 1em;
+    margin: 1em auto;
+    /* text-align: left; */
+    width: 50%;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding: 1em;
+    font-weight: 100;
+
+}
+
+#citizens > div > div {
+    margin: 0.5em;
+}
+
+#start-country {
+    margin-top: 1em;
+    font-size: 1.25em !important;
+}
