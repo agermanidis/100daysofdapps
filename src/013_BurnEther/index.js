@@ -111,7 +111,10 @@ class App extends SugarComponent {
 }
 
 const Wrapped = () => (
-  <EthereumWrapper mainNetwork="ropsten" supportedNetworks={["ropsten"]}>
+  <EthereumWrapper
+    mainNetwork="ropsten"
+    supportedNetworks={Object.keys(CONTRACT_ADDRESSES)}
+  >
     <App />
   </EthereumWrapper>
 );

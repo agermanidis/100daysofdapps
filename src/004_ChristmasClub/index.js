@@ -33,6 +33,7 @@ class App extends SugarComponent {
             pendingTx: null,
             txSucceded: true,
             statusMsg: '',
+            earlyWithdrawalFeePct: 5,
             balance: 0
         }
     }
@@ -44,7 +45,8 @@ class App extends SugarComponent {
     );
     await this.setStateAsync({ contractInstance });
     const withdrawalTime = await contractInstance.methods.withdrawalTime().call();
-    await this.setStateAsync({ contractInstance, withdrawalTime });
+    const earlyWithdrawalFeePct = await contractInstance.methods.earlyWithdrawalFeePct().call();
+    await this.setStateAsync({ contractInstance, withdrawalTime, earlyWithdrawalFeePct });
     await this.refreshBalance();
     setInterval(this.refreshPending.bind(this), 1000);
   }
@@ -125,7 +127,7 @@ class App extends SugarComponent {
     }
 
     render () {
-        const {balance, pendingTx} = this.state;
+        const { balance, earlyWithdrawalFeePct, pendingTx } = this.state;
         return <div id="cc-main">
             <div id="cc-head">
               <img width={100} src={SantaHat} />
@@ -139,7 +141,10 @@ class App extends SugarComponent {
                 Prevent yourself from reckless spending throughout the
                 year.
               </p>
-              <p>There is a 3% fee if you withdraw early.</p>
+              <p>
+                There is a {earlyWithdrawalFeePct}% fee if you withdraw
+                early.
+              </p>
             </div>
             <p>
               Countdown:{" "}
@@ -153,7 +158,7 @@ class App extends SugarComponent {
               <div id="cc-body">
                 <div>
                   <p>
-                    Your Balance: <b>
+                    You have deposited: <b>
                       {this.props.web3.utils.fromWei(
                         balance.toString()
                       )}{" "}
@@ -161,7 +166,7 @@ class App extends SugarComponent {
                     </b>
                   </p>
                   <button disabled={!this.props.isNetworkSupported} onClick={this.withdraw.bind(this)}>
-                    {this.isPastWithdrawalTime() ? "Make Withdrawal" : "Make Early Withdrawal (3% fee)"}
+                    {this.isPastWithdrawalTime() ? "Make Withdrawal" : `Make Early Withdrawal (${earlyWithdrawalFeePct}% fee)`}
                   </button>
                 </div>
                 <div>
@@ -177,7 +182,7 @@ class App extends SugarComponent {
               </div>
             </WithPendingTransaction>
             <p>
-              Inspired by a <ExternalLink href="https://en.wikipedia.org/wiki/Christmas_club">
+              Named after a <ExternalLink href="https://en.wikipedia.org/wiki/Christmas_club">
                 popular early 20th century savings program
               </ExternalLink>.
             </p>

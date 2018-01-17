@@ -69,6 +69,10 @@ class App extends Component {
             <small>Day 13</small>
             <Link to="/013_BurnEther">Burn Ether</Link>
           </p>
+          <p>
+            <small>Day 14</small>
+            <Link to="/014_ClassConsciousness">Class Consciousness</Link>
+          </p>
         </h3>
         <ExternalLink href="https://github.com/agermanidis/100daysofdapps">
           <FaGithub />View source on Github

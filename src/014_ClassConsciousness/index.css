@@ -1,0 +1,85 @@
+#class-consciousness {
+    width: 75%;
+    height: 100%;
+    text-align: center;
+    margin: 3em auto 0 auto;
+}
+
+#class-consciousness h1 {
+    font-size: 2em;
+    margin: 0.25em;
+}
+
+
+
+#class-consciousness #input-container {
+    font-size: 0.75em;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    width: 75%;
+    margin: 1em auto;
+    text-align: left;
+}
+
+#class-consciousness textarea {
+    outline: none;
+    font-size: 1.25em;
+    border: none;
+    width: 100%;
+    margin: 1em;
+    height: 50px;
+    resize: none;
+}
+
+#class-consciousness .img-drop {
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 25px;
+}
+
+
+
+#input-container img {
+    margin: 1em;
+    border: 1px solid lightgray;
+    height: 100px;
+}
+
+#class-consciousness #input-container-box {
+    display: flex;
+    align-items: center;
+}
+
+
+#class-consciousness .msg-limit {
+    margin: 1em;
+    color: gray;
+}
+
+#social-classes {
+    display: flex;
+    margin: 1em;
+}
+
+.class-column {
+    flex: 1;
+    border: 1px solid lightgray;
+    min-height: 400px;
+}
+
+.class-column.my-class {
+    background: #e8ffe8;
+}
+
+.class-column .header {
+    margin: 1em;
+    font-size: 1em;
+}
+
+.class-column .name {
+    font-size: 1.25em;
+}
+
+.class-column .status {
+    width: 90%;
+}
