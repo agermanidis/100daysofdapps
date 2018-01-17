@@ -1,13 +1,14 @@
 {
-  "main.css": "static/css/main.d2698ffe.css",
-  "main.css.map": "static/css/main.d2698ffe.css.map",
-  "main.js": "static/js/main.62d3e7e1.js",
-  "main.js.map": "static/js/main.62d3e7e1.js.map",
+  "main.css": "static/css/main.6c282910.css",
+  "main.css.map": "static/css/main.6c282910.css.map",
+  "main.js": "static/js/main.4e9f81c1.js",
+  "main.js.map": "static/js/main.4e9f81c1.js.map",
   "static/media/bar.png": "static/media/bar.c0bc464e.png",
   "static/media/burn.png": "static/media/burn.58e8f35d.png",
   "static/media/church.png": "static/media/church.17c74c4b.png",
   "static/media/dictionary.ico": "static/media/dictionary.03f38e93.ico",
   "static/media/ethlogo.svg": "static/media/ethlogo.2b470564.svg",
+  "static/media/marx.svg": "static/media/marx.0da05eaa.svg",
   "static/media/stamp.png": "static/media/stamp.38601639.png",
   "static/media/title.png": "static/media/title.3ab917e7.png"
 }
