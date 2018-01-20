@@ -1,0 +1,43 @@
+#advisor-main {
+    width: 75%;
+    height: 100%;
+    margin: 3em auto 0 auto;
+}
+
+#advisor-main li {
+    margin: 1em;
+}
+
+#advisor-main input {
+    border: none;
+    border-bottom: 1px dashed gray;
+    outline: none;
+    font-size: 1em;
+    text-align: center;
+    margin: auto;
+    padding: 0.3em;  
+    margin-right: 1em;  
+   width: 500px;
+}
+
+#advisor-main button {
+    font-size: 1em;
+}
+
+#advisor-main input[type=number]{
+    width: 50px;
+}
+
+
+#advisor-main .transaction button {
+    font-size: 0.75em;
+}
+
+#advisor-main .transaction {
+    margin: 1em 0;
+    width: 600px;
+}
+
+.empty-state {
+    color: gray;
+}

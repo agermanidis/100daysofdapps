@@ -73,6 +73,18 @@ class App extends Component {
             <small>Day 14</small>
             <Link to="/014_ClassConsciousness">Class Consciousness</Link>
           </p>
+          <p>
+            <small>Day 15</small>
+            <Link to="/015_WalletsOnline">Wallets Currently Online</Link>
+          </p>
+          <p>
+            <small>Day 16</small>
+            <Link to="/016_PersonalAdvisor">Your Personal Advisor</Link>
+          </p>
+          <p>
+            <small>Day 17</small>
+            <Link to="/017_Tribute">Tribute</Link>
+          </p>
         </h3>
         <ExternalLink href="https://github.com/agermanidis/100daysofdapps">
           <FaGithub />View source on Github

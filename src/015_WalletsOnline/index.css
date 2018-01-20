@@ -1,0 +1,21 @@
+#wallets-online {
+    text-align: center;
+    padding: 1em 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;    
+}
+
+#wallets-online footer {
+    position: absolute;
+    bottom: 50px;
+    text-align: center;
+    width: 100%;
+}
+
+.back-button {
+    z-index: 2;
+}

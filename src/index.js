@@ -22,6 +22,9 @@ import Day011 from "./011_Blockcaster";
 import Day012 from "./012_Autocracy";
 import Day013 from "./013_BurnEther";
 import Day014 from "./014_ClassConsciousness";
+import Day015 from "./015_WalletsOnline";
+import Day016 from "./016_PersonalAdvisor";
+import Day017 from "./017_Tribute";
 
 ReactDOM.render(
   <HashRouter>
@@ -41,6 +44,9 @@ ReactDOM.render(
       <Route path="/012_Autocracy" component={Day012} />
       <Route path="/013_BurnEther" component={Day013} />
       <Route path="/014_ClassConsciousness" component={Day014} />
+      <Route path="/015_WalletsOnline" component={Day015} />
+      <Route path="/016_PersonalAdvisor" component={Day016} />
+      <Route path="/017_Tribute" component={Day017} />
     </Switch>
   </HashRouter>,
   document.getElementById("root")

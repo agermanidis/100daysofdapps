@@ -1,0 +1,27 @@
+#tributes {
+    margin: 5em auto;
+    text-align: center;
+}
+
+canvas {
+    border: 1px solid black;
+}
+
+#live-feed-text {
+    position: relative;
+    top: 30px;
+    left: 100px;
+    color: red;
+}
+
+#tributes input {
+    border: none;
+    border-bottom: 1px dashed gray;
+    outline: none;
+    font-size: 1.25em;
+    text-align: center;
+    margin: auto;
+    padding: 0.3em;  
+    margin-right: 1em;  
+    width: 100px;
+}

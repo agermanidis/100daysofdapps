@@ -174,7 +174,12 @@ class App extends SugarComponent {
                 )} />
           </div>
           <div className={`${locked && "locked"}`}>
-            <P5Wrapper sketch={sketch} color={color} brushSize={brushSize} locked={locked} startingImg={contentURL}/>
+            <P5Wrapper 
+              sketch={sketch} 
+              color={color} 
+              brushSize={brushSize} 
+              locked={locked} 
+              startingImg={contentURL} />
           </div>
         </div>
         {currentRentier === ZERO_ADDRESS ? <div>
