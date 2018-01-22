@@ -5,6 +5,14 @@ import ReactLoading from "react-loading";
 import ipfsAPI from "ipfs-api";
 import toBuffer from "blob-to-buffer";
 import FaHome from 'react-icons/lib/fa/home';
+import styled from 'styled-components';
+import {
+  TextInput,
+  NewPostInputContainer,
+  NewPostInputLayout,
+  MsgLimitLabel,
+  StyledTextarea
+} from './styles';
 
 class SugarComponent extends Component {
   setStateAsync(state) {
@@ -252,6 +260,27 @@ const ipfsCat = async (hash) => {
   return decoder.decode(content);
 }
 
+const NewPostInput = ({allowImageInput, image, value, placeholder, onChange, limit}) => {
+  return <NewPostInputContainer>
+      <NewPostInputLayout>
+        <StyledTextarea 
+          maxLength={limit} 
+          value={value} 
+          onChange={onChange}
+          placeholder={placeholder} />
+        <MsgLimitLabel>
+          {value.length}/{limit}
+        </MsgLimitLabel>
+      </NewPostInputLayout>
+    </NewPostInputContainer>;
+}
+
+const ETH_ADDRESS_REGEX = /^0x[a-fA-F0-9]{40}$/;
+
+const isValidEthAddress = (addr) => ETH_ADDRESS_REGEX.test(addr)
+
+const ZERO_ADDRESS = "0x0000000000000000000000000000000000000000";
+
 export {
   truncate,
   BackButton,
@@ -266,5 +295,8 @@ export {
   uploadFileToIpfs,
   uploadStringToIpfs,
   ipfsURL,
-  ipfsCat
+  ipfsCat,
+  NewPostInput,
+  isValidEthAddress,
+  ZERO_ADDRESS
 };

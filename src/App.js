@@ -85,6 +85,18 @@ class App extends Component {
             <small>Day 17</small>
             <Link to="/017_Tribute">Tribute</Link>
           </p>
+          <p>
+            <small>Day 18</small>
+            <Link to="/018_CryptoRiddles">CryptoRiddles</Link>
+          </p>
+          <p>
+            <small>Day 19</small>
+            <Link to="/019_EtherMail">EtherMail</Link>
+          </p>
+          <p>
+            <small>Day 20</small>
+            <Link to="/020_CypherpunkReports">Cypherpunk Reports</Link>
+          </p>
         </h3>
         <ExternalLink href="https://github.com/agermanidis/100daysofdapps">
           <FaGithub />View source on Github

@@ -1,0 +1,70 @@
+#riddles {
+    margin: 5em auto;
+    text-align: center;
+    width: 75%;
+}
+
+#riddles-main {
+    display: flex;
+    justify-content: center;
+    min-height: 300px;
+    margin: 2em 0;
+}
+
+#riddles-main > div {
+    flex: 1;
+    text-align: left;
+}
+
+#create-new-riddle {
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    padding: 1em;
+}
+
+#create-new-riddle input {
+    border: none;
+    border-bottom: 1px dashed gray;
+    outline: none;
+    font-size: 1em;
+    text-align: center;
+    margin: auto;
+    padding: 0.3em;  
+    margin-right: 1em;  
+    width: 80%;
+    text-align: left;
+}
+
+#create-new-riddle input[type=number] {
+    width: 100px;
+    text-align: center;
+}
+
+.riddle input {
+    border: none;
+    border-bottom: 1px dashed gray;
+    outline: none;
+    font-size: 1em;
+    text-align: center;
+    margin: auto;
+    padding: 0.3em;  
+    margin-right: 1em;  
+    width: 80%;
+    text-align: left;
+
+}
+
+.riddle .answer {
+    font-size: 0.75em;
+}
+
+.riddle {
+    margin: 2em 0;
+
+}
+
+.riddle > div {
+    margin: 1em 0;
+    width: 80%;
+
+}

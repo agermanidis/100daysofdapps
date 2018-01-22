@@ -17,7 +17,7 @@ import contractABI from "./abi";
 import profileContractABI from "./profile_abi";
 import FaFileImageO from 'react-icons/lib/fa/file-image-o';
 import Dropzone from "react-dropzone";
-import Textarea from 'react-expanding-textarea'
+import Textarea from 'react-expanding-textarea';
 import moment from 'moment';
 import './index.css';
 import Blockies from 'react-blockies';

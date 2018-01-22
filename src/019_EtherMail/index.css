@@ -1,0 +1,63 @@
+#ethermail {
+    width: 75%;
+    height: 100%;
+    text-align: center;
+    margin: 3em auto;
+}
+
+#ethermail a {
+    cursor: pointer;
+}
+
+.modal-content h3 {
+    text-align: center;
+    width: 100%;
+}
+
+.modal-content button {
+    font-size: 0.9em;
+}
+
+.modal-content p {
+    font-size: 1em;
+}
+
+.msg-box {
+    padding: 1em;
+    border: 1px solid lightgray;
+}
+
+.modal-content center button {
+    margin: 0 1em;
+}
+
+.modal-content input,textarea {
+    /* padding: 1em; */
+    width: 90%;
+    font-size: 1em;
+    outline: none;
+    margin: 1em;
+    border: 1px solid lightgray;
+}
+
+.modal-content textarea {
+    font-size: 1em;
+    resize: none;
+    min-height: 300px;
+    outline: none;
+}
+
+.email-list {
+   
+   width: 100%;
+
+}
+
+.email-list th,td {
+    text-align: center;
+    width: 25%;
+}
+
+#ethermail-main {
+    margin: 2em auto;    
+}
