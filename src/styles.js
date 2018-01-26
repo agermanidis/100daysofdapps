@@ -36,10 +36,20 @@ const StyledTextarea = styled(Textarea)`
   min-height: 100px;
 `;
 
+const HorizontalLayout = styled.div`
+  display: flex;
+`;
+
+const FillSpace = styled.div`
+  flex: 1;
+`;
+
 export {
   TextInput,
   NewPostInputContainer,
   NewPostInputLayout,
   MsgLimitLabel,
-  StyledTextarea
+  StyledTextarea,
+  HorizontalLayout,
+  FillSpace
 };

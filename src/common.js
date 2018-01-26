@@ -107,7 +107,7 @@ class WithPendingTransaction extends SugarComponent {
       }
       return (
         <span className="pending-tx">
-          {pendingMsg ? pendingMsg : <span>Pending confirmation (might take a minute):{" "}
+          {pendingMsg !== undefined ? pendingMsg : <span>Pending confirmation (might take a minute):{" "}
           <EtherscanTxLink network={network} transaction={transaction} /></span>}
           {showLoader && <ReactLoading className="loading" type="spin" color="#444" />}
         </span>

@@ -73,15 +73,17 @@
 
 }
 
-.status .picture,.identicon {
+.identicon {
+    border-radius: 50%;
+    border: 1px solid lightgray;
+}
 
+.status .picture,.status .identicon {
     width: 50px !important;
     height: 50px !important;
     float: left;
     background: red;
     margin: 0.75em;
-    border: none;
-    border-radius: 50%;
 }
 
 .status .image {
