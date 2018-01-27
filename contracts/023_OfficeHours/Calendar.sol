@@ -23,8 +23,8 @@ contract Calendar {
     }
     
     function bookTime (uint start, uint end, string contentHash) public payable {
-        require(minimumTime > (end - start));
         uint duration = end - start;
+        require(duration > minimumTime);
         uint price = pricePerSecond * duration;
         require(msg.value >= price);
         require(isSlotAvailable(start, end));
@@ -45,7 +45,7 @@ contract Calendar {
         msg.sender.transfer(this.balance);
     }
     
-    function isSlotAvailable (uint start, uint end) public view returns (bool) {
+    function isSlotAvailable (uint start, uint end) private view returns (bool) {
         for (uint i = 0; i < slots.length; i++) {
             Slot storage slot = slots[i];
             if (start > slot.start && start < slot.end) return false;
