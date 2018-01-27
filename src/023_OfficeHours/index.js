@@ -132,21 +132,21 @@ class App extends SugarComponent {
         <p>Book office hours with me.</p>
         <p>Price per hour: {this.props.web3.utils.fromWei(pricePerHour)} ETH</p>
         <WithPendingTransaction transaction={pendingTx} web3={this.props.web3}>
-        <BigCalendar
-          onSelectSlot={this.selectSlot.bind(this)}
-          min={new Date(today.getFullYear(), today.getMonth(), today.getDate(), 9)}
-          max={new Date(today.getFullYear(), today.getMonth(), today.getDate(), 17)}
-          view="week"
-          views={["week"]}
-          selectable={true}
-          events={events}
-          eventPropGetter={(event) => {
-              return {
-                  style: {
-                      backgroundColor: event.taker === this.props.address ? 'red' : 'blue'
-                  }
-              }
-             }} />
+          <BigCalendar
+            onSelectSlot={this.selectSlot.bind(this)}
+            min={new Date(today.getFullYear(), today.getMonth(), today.getDate(), 9)}
+            max={new Date(today.getFullYear(), today.getMonth(), today.getDate(), 17)}
+            view="week"
+            views={["week"]}
+            selectable={true}
+            events={events}
+            eventPropGetter={(event) => {
+                return {
+                    style: {
+                        backgroundColor: event.taker === this.props.address ? 'red' : 'blue'
+                    }
+                }
+            }} />
         </WithPendingTransaction>
         <p>
           <EtherscanAddressLink

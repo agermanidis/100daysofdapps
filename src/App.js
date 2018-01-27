@@ -113,6 +113,10 @@ class App extends Component {
             <small>Day 24</small>
             <Link to="/024_OverflowOfSisyphus">The Overflow of Sisyphus</Link>
           </p>
+          <p>
+            <small>Day 25</small>
+            <Link to="/025_CryptoAggregator">CryptoAggregator</Link>
+          </p>
         </h3>
         <ExternalLink href="https://github.com/agermanidis/100daysofdapps">
           <FaGithub />View source on Github
