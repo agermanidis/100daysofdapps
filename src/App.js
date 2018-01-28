@@ -117,6 +117,10 @@ class App extends Component {
             <small>Day 25</small>
             <Link to="/025_CryptoAggregator">CryptoAggregator</Link>
           </p>
+          <p>
+            <small>Day 26</small>
+            <Link to="/026_RecentlyPossibleCoin">Recently Possible Coin</Link>
+          </p>
         </h3>
         <ExternalLink href="https://github.com/agermanidis/100daysofdapps">
           <FaGithub />View source on Github

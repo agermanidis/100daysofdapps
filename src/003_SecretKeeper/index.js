@@ -144,6 +144,7 @@ class App extends SugarComponent {
                         ref={(el) => { this._inputEl = el }}/>
                 </p>
                 <WithPendingTransaction
+                    web3={this.props.web3}
                     transaction={pendingTx}
                     network={this.props.network}
                     >
