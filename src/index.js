@@ -34,6 +34,7 @@ import Day023 from "./023_OfficeHours";
 import Day024 from "./024_OverflowOfSisyphus";
 import Day025 from "./025_CryptoAggregator";
 import Day026 from "./026_RecentlyPossibleCoin";
+import Day027 from "./027_AlarmClockWithConsequences";
 
 ReactDOM.render(
   <HashRouter>
@@ -65,6 +66,7 @@ ReactDOM.render(
       <Route path="/024_OverflowOfSisyphus" component={Day024} />
       <Route path="/025_CryptoAggregator" component={Day025} />
       <Route path="/026_RecentlyPossibleCoin" component={Day026} />
+      <Route path="/027_AlarmClockWithConsequences" component={Day027} />
     </Switch>
   </HashRouter>,
   document.getElementById("root")

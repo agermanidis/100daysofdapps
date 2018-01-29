@@ -12,6 +12,7 @@
     "js-sha256": "^0.9.0",
     "moment": "^2.20.1",
     "randomcolor": "^0.5.3",
+    "rc-time-picker": "^3.2.1",
     "react": "^16.2.0",
     "react-big-calendar": "^0.17.0",
     "react-blockies": "^1.2.2",

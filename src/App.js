@@ -121,6 +121,10 @@ class App extends Component {
             <small>Day 26</small>
             <Link to="/026_RecentlyPossibleCoin">Recently Possible Coin</Link>
           </p>
+          <p>
+            <small>Day 27</small>
+            <Link to="/027_AlarmClockWithConsequences">Alarm Clock with Consequences</Link>
+          </p>
         </h3>
         <ExternalLink href="https://github.com/agermanidis/100daysofdapps">
           <FaGithub />View source on Github
