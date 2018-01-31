@@ -111,7 +111,9 @@ class App extends Component {
           </p>
           <p>
             <small>Day 24</small>
-            <Link to="/024_OverflowOfSisyphus">The Overflow of Sisyphus</Link>
+            <Link to="/024_OverflowOfSisyphus">
+              The Overflow of Sisyphus
+            </Link>
           </p>
           <p>
             <small>Day 25</small>
@@ -119,11 +121,19 @@ class App extends Component {
           </p>
           <p>
             <small>Day 26</small>
-            <Link to="/026_RecentlyPossibleCoin">Recently Possible Coin</Link>
+            <Link to="/026_RecentlyPossibleCoin">
+              Recently Possible Coin
+            </Link>
           </p>
           <p>
             <small>Day 27</small>
-            <Link to="/027_AlarmClockWithConsequences">Alarm Clock with Consequences</Link>
+            <Link to="/027_AlarmClockWithConsequences">
+              Alarm Clock with Consequences
+            </Link>
+          </p>
+          <p>
+            <small>Day 28</small>
+            <Link to="/028_AltruismContract">Altruism Contract</Link>
           </p>
         </h3>
         <ExternalLink href="https://github.com/agermanidis/100daysofdapps">
