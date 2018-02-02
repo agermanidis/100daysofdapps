@@ -135,6 +135,14 @@ class App extends Component {
             <small>Day 28</small>
             <Link to="/028_AltruismContract">Altruism Contract</Link>
           </p>
+          <p>
+            <small>Day 29</small>
+            <Link to="/029_BlockchainNeighbor">Your Blockchain Neighbor</Link>
+          </p>
+          <p>
+            <small>Day 30</small>
+            <Link to="/030_PermanentMemories">Permanent Memories</Link>
+          </p>
         </h3>
         <ExternalLink href="https://github.com/agermanidis/100daysofdapps">
           <FaGithub />View source on Github

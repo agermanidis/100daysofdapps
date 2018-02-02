@@ -36,6 +36,8 @@ import Day025 from "./025_CryptoAggregator";
 import Day026 from "./026_RecentlyPossibleCoin";
 import Day027 from "./027_AlarmClockWithConsequences";
 import Day028 from "./028_AltruismContract";
+import Day029 from "./029_BlockchainNeighbor";
+import Day030 from "./030_PermanentMemories";
 
 ReactDOM.render(
   <HashRouter>
@@ -69,6 +71,8 @@ ReactDOM.render(
       <Route path="/026_RecentlyPossibleCoin" component={Day026} />
       <Route path="/027_AlarmClockWithConsequences" component={Day027} />
       <Route path="/028_AltruismContract" component={Day028} />
+      <Route path="/029_BlockchainNeighbor" component={Day029} />
+      <Route path="/030_PermanentMemories" component={Day030} />
     </Switch>
   </HashRouter>,
   document.getElementById("root")
