@@ -143,6 +143,10 @@ class App extends Component {
             <small>Day 30</small>
             <Link to="/030_PermanentMemories">Permanent Memories</Link>
           </p>
+          <p>
+            <small>Day 31</small>
+            <Link to="/031_GoalTracker">Goal Tracker</Link>
+          </p>
         </h3>
         <ExternalLink href="https://github.com/agermanidis/100daysofdapps">
           <FaGithub />View source on Github

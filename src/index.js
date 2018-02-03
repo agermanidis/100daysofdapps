@@ -38,6 +38,7 @@ import Day027 from "./027_AlarmClockWithConsequences";
 import Day028 from "./028_AltruismContract";
 import Day029 from "./029_BlockchainNeighbor";
 import Day030 from "./030_PermanentMemories";
+import Day031 from "./031_GoalTracker";
 
 ReactDOM.render(
   <HashRouter>
@@ -73,6 +74,7 @@ ReactDOM.render(
       <Route path="/028_AltruismContract" component={Day028} />
       <Route path="/029_BlockchainNeighbor" component={Day029} />
       <Route path="/030_PermanentMemories" component={Day030} />
+      <Route path="/031_GoalTracker" component={Day031} />
     </Switch>
   </HashRouter>,
   document.getElementById("root")
