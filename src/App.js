@@ -137,7 +137,9 @@ class App extends Component {
           </p>
           <p>
             <small>Day 29</small>
-            <Link to="/029_BlockchainNeighbor">Your Blockchain Neighbor</Link>
+            <Link to="/029_BlockchainNeighbor">
+              Your Blockchain Neighbor
+            </Link>
           </p>
           <p>
             <small>Day 30</small>
@@ -146,6 +148,10 @@ class App extends Component {
           <p>
             <small>Day 31</small>
             <Link to="/031_GoalTracker">Goal Tracker</Link>
+          </p>
+          <p>
+            <small>Day 32</small>
+            <Link to="/032_IPFSBin">IPFS Bin</Link>
           </p>
         </h3>
         <ExternalLink href="https://github.com/agermanidis/100daysofdapps">

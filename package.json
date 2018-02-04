@@ -30,6 +30,7 @@
     "react-redux": "^5.0.6",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
+    "react-syntax-highlighter": "^7.0.0",
     "react-tabs": "^2.2.1",
     "react-tippy": "^1.2.2",
     "react-web3": "^0.4.4",
