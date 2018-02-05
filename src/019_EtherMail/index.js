@@ -6,7 +6,7 @@ import {
   EthereumWrapper,
   EtherscanTxLink,
   EtherscanAddressLink,
-  truncate,
+  truncateStr,
   WithPendingTransaction,
   uploadStringToIpfs,
   uploadFileToIpfs,
@@ -144,7 +144,9 @@ class App extends SugarComponent {
         <button onClick={() => this.setState({ composeOpen: true })}>
           <FaEdit /> Compose
         </button>
-        <ReactModal shouldCloseOnOverlayClick={true} style={customModalStyle} contentLabel="Compose new mail" onRequestClose={() => this.setState(
+        <ReactModal 
+          shouldCloseOnOverlayClick={true} 
+          style={customModalStyle} contentLabel="Compose new mail" onRequestClose={() => this.setState(
               { viewOpen: false }
             )} isOpen={viewOpen}>
           <div className="modal-content">

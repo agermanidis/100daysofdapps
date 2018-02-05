@@ -6,7 +6,7 @@ import {
   EthereumWrapper, 
   EtherscanTxLink, 
   EtherscanAddressLink,
-  truncate
+  truncateStr
 } from '../common';
 import contractABI from './abi';
 import ReactLoading from "react-loading";
@@ -76,7 +76,7 @@ class App extends SugarComponent {
       statusEl = <span className="pending-tx">
           Pending confirmation:
           <EtherscanTxLink transaction={this.state.pendingTx}>
-            {truncate(this.state.pendingTx)}
+            {truncateStr(this.state.pendingTx)}
           </EtherscanTxLink>
           <ReactLoading className="loading" type="spin" color="#444" />
         </span>;

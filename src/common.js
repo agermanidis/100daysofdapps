@@ -32,7 +32,7 @@ function getEtherscanTxUrl(addr, network = 'mainnet') {
   return `https://etherscan.io/tx/${addr}`;
 }
 
-const truncate = addr => {
+const truncateStr = addr => {
   return addr.substr(0, 16) + "...";
 };
 
@@ -41,17 +41,19 @@ const ExternalLink = ({children, ...rest}) => {
 }
 
 const EtherscanTxLink = ({ transaction, truncate, text, network }) => {
-    const inner = text || (truncate ? truncate(transaction) : transaction);
+    const inner = text || (truncate ? truncateStr(transaction) : transaction);
     return <ExternalLink href={getEtherscanTxUrl(transaction, network)}>
         {inner}
       </ExternalLink>;
 }
 
 const EtherscanAddressLink = ({ address, truncate, text, network }) => {
-    const inner = text || (truncate ? truncate(address) : address);
-    return <ExternalLink href={getEtherscanAddressUrl(address, network)}>
-        {inner}
-      </ExternalLink>;
+  const inner = text || (truncate ? truncateStr(address) : address);
+  return (
+    <ExternalLink href={getEtherscanAddressUrl(address, network)}>
+      {inner}
+    </ExternalLink>
+  );
 };
 
 const joinOr = (arr) => {
@@ -282,7 +284,7 @@ const isValidEthAddress = (addr) => ETH_ADDRESS_REGEX.test(addr)
 const ZERO_ADDRESS = "0x0000000000000000000000000000000000000000";
 
 export {
-  truncate,
+  truncateStr,
   BackButton,
   ExternalLink,
   SugarComponent,

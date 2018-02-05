@@ -6,7 +6,7 @@ import {
   EthereumWrapper,
   EtherscanTxLink,
   EtherscanAddressLink,
-  truncate,
+  truncateStr,
   WithPendingTransaction,
   uploadStringToIpfs,
   ipfsCat,
@@ -187,7 +187,7 @@ class App extends SugarComponent {
                 return <tr>
                     <td>
                       <ExternalLink href={ipfsURL(rev.ipfsHash)}>
-                        {truncate(rev.ipfsHash)}
+                        {truncateStr(rev.ipfsHash)}
                       </ExternalLink>
                     </td>
                     <td>{rev.timestamp}</td>

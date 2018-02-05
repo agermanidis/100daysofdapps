@@ -153,6 +153,10 @@ class App extends Component {
             <small>Day 32</small>
             <Link to="/032_IPFSBin">IPFS Bin</Link>
           </p>
+          <p>
+            <small>Day 33</small>
+            <Link to="/033_Decentrachat">Decentrachat</Link>
+          </p>
         </h3>
         <ExternalLink href="https://github.com/agermanidis/100daysofdapps">
           <FaGithub />View source on Github

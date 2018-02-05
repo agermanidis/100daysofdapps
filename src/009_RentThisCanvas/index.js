@@ -6,7 +6,7 @@ import {
   EthereumWrapper,
   EtherscanTxLink,
   EtherscanAddressLink,
-  truncate,
+  truncateStr,
   WithPendingTransaction,
   uploadStringToIpfs,
   ipfsCat,

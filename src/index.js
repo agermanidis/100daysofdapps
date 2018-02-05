@@ -40,6 +40,7 @@ import Day029 from "./029_BlockchainNeighbor";
 import Day030 from "./030_PermanentMemories";
 import Day031 from "./031_GoalTracker";
 import Day032 from "./032_IPFSBin";
+import Day033 from "./033_Decentrachat";
 
 ReactDOM.render(
   <HashRouter>
@@ -77,6 +78,7 @@ ReactDOM.render(
       <Route path="/030_PermanentMemories" component={Day030} />
       <Route path="/031_GoalTracker" component={Day031} />
       <Route path="/032_IPFSBin" component={Day032} />
+      <Route path="/033_Decentrachat" component={Day033} />
     </Switch>
   </HashRouter>,
   document.getElementById("root")

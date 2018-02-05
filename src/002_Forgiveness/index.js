@@ -6,7 +6,7 @@ import {
   EthereumWrapper,
   EtherscanTxLink,
   EtherscanAddressLink,
-  truncate
+  truncateStr
 } from "../common";
 import contractABI from "./abi";
 import ReactLoading from "react-loading";

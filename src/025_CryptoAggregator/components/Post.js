@@ -46,7 +46,7 @@ const PostContent = styled.div`
     text-align: left;
 `;
 
-const truncate = (n) => {
+const truncateStr = (n) => {
     if (n.includes('.')) return n.split('.')[0] + '.' + n.split('.')[1].slice(0, 2);
     else return n;
 }
@@ -80,7 +80,7 @@ export default ({
                     color: vote === 2 ? 'orange' : 'black'
                 }} 
                 onClick={readOnly ? noOp : onUpvote} />
-            <ScoreText>{truncate(web3.utils.fromWei(score.toString()))} ETH</ScoreText>
+            <ScoreText>{truncateStr(web3.utils.fromWei(score.toString()))} ETH</ScoreText>
             <FaArrowCircleDown 
                 style={{
                     cursor: readOnly ? 'default' : 'pointer',
