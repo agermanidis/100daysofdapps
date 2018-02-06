@@ -296,6 +296,7 @@ export {
   WithPendingTransaction,
   uploadFileToIpfs,
   uploadStringToIpfs,
+  ipfs,
   ipfsURL,
   ipfsCat,
   NewPostInput,

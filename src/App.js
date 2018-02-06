@@ -157,6 +157,10 @@ class App extends Component {
             <small>Day 33</small>
             <Link to="/033_Decentrachat">Decentrachat</Link>
           </p>
+          <p>
+            <small>Day 34</small>
+            <Link to="/034_BlockVisualizer">Block Visualizer</Link>
+          </p>
         </h3>
         <ExternalLink href="https://github.com/agermanidis/100daysofdapps">
           <FaGithub />View source on Github

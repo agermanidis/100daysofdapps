@@ -34,7 +34,7 @@ class App extends SugarComponent {
   };
 
   async search () {
-      this.setState({searching: true});
+    this.setState({searching: true});
     const { web3 } = this.props;
     let addresses = [];
     const blockN = (await this.props.web3.eth.getBlock('latest')).number;

@@ -115,3 +115,7 @@ button {
   background: none;
   color: #49555f;
 }
+
+.rv-xy-plot {
+  margin: auto;
+}

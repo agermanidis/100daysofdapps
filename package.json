@@ -36,6 +36,7 @@
     "react-syntax-highlighter": "^7.0.0",
     "react-tabs": "^2.2.1",
     "react-tippy": "^1.2.2",
+    "react-vis": "^1.8.2",
     "react-web3": "^0.4.4",
     "recompose": "^0.26.0",
     "redux": "^3.7.2",

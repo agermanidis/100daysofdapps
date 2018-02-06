@@ -68,12 +68,12 @@ const StyledSelect = styled.select`
   font-size: 1em;
 `
 
-const StyledNumberInput = styled(StyledInput)`
-  width: 100px;
-`;
-
 const AddressInput = styled(StyledInput)`
   width: 550px;
+`;
+
+const StyledNumberInput = styled(StyledInput)`
+  width: 100px;
 `;
 
 const NumberInput = (props) => {

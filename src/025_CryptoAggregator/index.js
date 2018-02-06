@@ -1,5 +1,3 @@
-
-
 import React, { Component } from 'react'
 import {
     SugarComponent,
@@ -8,7 +6,7 @@ import {
     EthereumWrapper,
     EtherscanTxLink,
     EtherscanAddressLink,
-    truncateStr,
+    truncate,
     WithPendingTransaction,
     uploadStringToIpfs,
     uploadFileToIpfs,
