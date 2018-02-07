@@ -1,8 +1,8 @@
 {
   "main.css": "static/css/main.3dc2a472.css",
   "main.css.map": "static/css/main.3dc2a472.css.map",
-  "main.js": "static/js/main.63012019.js",
-  "main.js.map": "static/js/main.63012019.js.map",
+  "main.js": "static/js/main.b2d82e5a.js",
+  "main.js.map": "static/js/main.b2d82e5a.js.map",
   "static/media/CRLogo.png": "static/media/CRLogo.b1d227b4.png",
   "static/media/alarm.jpeg": "static/media/alarm.a1e88b1f.jpeg",
   "static/media/bar.png": "static/media/bar.c0bc464e.png",
@@ -16,6 +16,7 @@
   "static/media/hill.png": "static/media/hill.6933f614.png",
   "static/media/introducing.png": "static/media/introducing.f61f3e30.png",
   "static/media/marx.svg": "static/media/marx.0da05eaa.svg",
+  "static/media/mining.png": "static/media/mining.0300d6cd.png",
   "static/media/paste.svg": "static/media/paste.cb926b98.svg",
   "static/media/stamp.png": "static/media/stamp.38601639.png",
   "static/media/target.png": "static/media/target.8d610f71.png",
