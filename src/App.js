@@ -161,6 +161,14 @@ class App extends Component {
             <small>Day 34</small>
             <Link to="/034_BlockVisualizer">Block Visualizer</Link>
           </p>
+          <p>
+            <small>Day 35</small>
+            <Link to="/035_ProofOfWork">Proof-of-Work Game</Link>
+          </p>
+          <p>
+            <small>Day 36</small>
+            <Link to="/036_EmotionCoins">Emotion Coins</Link>
+          </p>
         </h3>
         <ExternalLink href="https://github.com/agermanidis/100daysofdapps">
           <FaGithub />View source on Github

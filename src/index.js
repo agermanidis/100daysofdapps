@@ -42,6 +42,8 @@ import Day031 from "./031_GoalTracker";
 import Day032 from "./032_IPFSBin";
 import Day033 from "./033_Decentrachat";
 import Day034 from "./034_BlockVisualizer";
+import Day035 from "./035_ProofOfWork";
+import Day036 from "./036_EmotionCoins";
 
 ReactDOM.render(
   <HashRouter>
@@ -81,6 +83,8 @@ ReactDOM.render(
       <Route path="/032_IPFSBin" component={Day032} />
       <Route path="/033_Decentrachat" component={Day033} />
       <Route path="/034_BlockVisualizer" component={Day034} />
+      <Route path="/035_ProofOfWork" component={Day035} />
+      <Route path="/036_EmotionCoins" component={Day036} />
     </Switch>
   </HashRouter>,
   document.getElementById("root")

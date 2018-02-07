@@ -107,7 +107,7 @@ class App extends SugarComponent {
         createVerifier: '',
         createDeposit: 0,
         goals: []
-    }
+    };
 
     async componentDidMount() {
         const contractInstance = new this.props.web3.eth.Contract(
