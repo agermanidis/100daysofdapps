@@ -1,8 +1,8 @@
 {
   "main.css": "static/css/main.3dc2a472.css",
   "main.css.map": "static/css/main.3dc2a472.css.map",
-  "main.js": "static/js/main.bcade00f.js",
-  "main.js.map": "static/js/main.bcade00f.js.map",
+  "main.js": "static/js/main.9da5226e.js",
+  "main.js.map": "static/js/main.9da5226e.js.map",
   "static/media/CRLogo.png": "static/media/CRLogo.b1d227b4.png",
   "static/media/alarm.jpeg": "static/media/alarm.a1e88b1f.jpeg",
   "static/media/bar.png": "static/media/bar.c0bc464e.png",
@@ -20,5 +20,6 @@
   "static/media/paste.svg": "static/media/paste.cb926b98.svg",
   "static/media/stamp.png": "static/media/stamp.38601639.png",
   "static/media/target.png": "static/media/target.8d610f71.png",
-  "static/media/title.png": "static/media/title.3ab917e7.png"
+  "static/media/title.png": "static/media/title.3ab917e7.png",
+  "static/media/warning.png": "static/media/warning.fd22bf6e.png"
 }
