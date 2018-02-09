@@ -169,6 +169,10 @@ class App extends Component {
             <small>Day 36</small>
             <Link to="/036_EmotionCoins">Emotion Coins</Link>
           </p>
+          <p>
+            <small>Day 37</small>
+            <Link to="/037_CryptoAdulthood">Crypto-Adulthood</Link>
+          </p>
         </h3>
         <ExternalLink href="https://github.com/agermanidis/100daysofdapps">
           <FaGithub />View source on Github
