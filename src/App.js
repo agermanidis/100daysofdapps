@@ -173,6 +173,10 @@ class App extends Component {
             <small>Day 37</small>
             <Link to="/037_CryptoAdulthood">Crypto-Adulthood</Link>
           </p>
+          <p>
+            <small>Day 38</small>
+            <Link to="/038_InspectDAO">Inspect DAO</Link>
+          </p>
         </h3>
         <ExternalLink href="https://github.com/agermanidis/100daysofdapps">
           <FaGithub />View source on Github

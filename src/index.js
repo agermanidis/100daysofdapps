@@ -45,6 +45,7 @@ import Day034 from "./034_BlockVisualizer";
 import Day035 from "./035_ProofOfWork";
 import Day036 from "./036_EmotionCoins";
 import Day037 from "./037_CryptoAdulthood";
+import Day038 from "./038_InspectDAO";
 
 ReactDOM.render(
   <HashRouter>
@@ -87,6 +88,7 @@ ReactDOM.render(
       <Route path="/035_ProofOfWork" component={Day035} />
       <Route path="/036_EmotionCoins" component={Day036} />
       <Route path="/037_CryptoAdulthood" component={Day037} />
+      <Route path="/038_InspectDAO" component={Day038} />
     </Switch>
   </HashRouter>,
   document.getElementById("root")
