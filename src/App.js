@@ -185,6 +185,22 @@ class App extends Component {
             <small>Day 40</small>
             <Link to="/040_MakeGoodArt">Make Good Art Contract</Link>
           </p>
+          <p>
+            <small>Day 41</small>
+            <Link to="/041_EtherSign">EtherSign</Link>
+          </p>
+          <p>
+            <small>Day 42</small>
+            <Link to="/042_P2PJam">P2PJam</Link>
+          </p>
+          <p>
+            <small>Day 43</small>
+            <Link to="/043_OffChainTicTacToe">Off-Chain Tic-Tac-Toe</Link>
+          </p>
+          <p>
+            <small>Day 44</small>
+            <Link to="/044_CoolHashes">Cool Hashes</Link>
+          </p>
         </h3>
         <ExternalLink href="https://github.com/agermanidis/100daysofdapps">
           <FaGithub />View source on Github

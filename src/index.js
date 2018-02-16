@@ -48,6 +48,10 @@ import Day037 from "./037_CryptoAdulthood";
 import Day038 from "./038_InspectDAO";
 import Day039 from "./039_PhoenixContract";
 import Day040 from "./040_MakeGoodArt";
+import Day041 from "./041_EtherSign";
+import Day042 from "./042_P2PJam";
+import Day043 from "./043_OffChainTicTacToe";
+import Day044 from "./044_CoolHashes";
 
 ReactDOM.render(
   <HashRouter>
@@ -93,6 +97,10 @@ ReactDOM.render(
       <Route path="/038_InspectDAO" component={Day038} />
       <Route path="/039_PhoenixContract" component={Day039} />
       <Route path="/040_MakeGoodArt" component={Day040} />
+      <Route path="/041_EtherSign" component={Day041} />
+      <Route path="/042_P2PJam" component={Day042} />
+      <Route path="/043_OffChainTicTacToe" component={Day043} />
+      <Route path="/044_CoolHashes" component={Day044} />
     </Switch>
   </HashRouter>,
   document.getElementById("root")
