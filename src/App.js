@@ -201,6 +201,10 @@ class App extends Component {
             <small>Day 44</small>
             <Link to="/044_CoolHashes">Cool Hashes</Link>
           </p>
+          <p>
+            <small>Day 45</small>
+            <Link to="/045_DStorage">DStorage</Link>
+          </p>
         </h3>
         <ExternalLink href="https://github.com/agermanidis/100daysofdapps">
           <FaGithub />View source on Github
