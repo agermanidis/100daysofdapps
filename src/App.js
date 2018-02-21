@@ -205,6 +205,22 @@ class App extends Component {
             <small>Day 45</small>
             <Link to="/045_DStorage">DStorage</Link>
           </p>
+          <p>
+            <small>Day 46</small>
+            <Link to="/046_Coinvote">Coinvote</Link>
+          </p>
+          <p>
+            <small>Day 47</small>
+            <Link to="/047_DecentralizedChatbot">Decentralized Chatbot</Link>
+          </p>
+          <p>
+            <small>Day 48</small>
+            <Link to="/048_ToyBlockchain">Toy Blockchain</Link>
+          </p>
+          <p>
+            <small>Day 49</small>
+            <Link to="/049_PaymentRequest">Payment Request</Link>
+          </p>
         </h3>
         <ExternalLink href="https://github.com/agermanidis/100daysofdapps">
           <FaGithub />View source on Github

@@ -73,6 +73,7 @@ class Creator extends SugarComponent {
         
         return <Container>
             <p><img src={PasteIcon} width={100} /></p>
+            <p>Quickly share code via IPFS.</p>
             <StyledInput placeholder="title" value={title} onChange={evt => this.setState(
                   {
                     title: evt.target.value

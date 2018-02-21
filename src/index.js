@@ -53,6 +53,10 @@ import Day042 from "./042_P2PJam";
 import Day043 from "./043_OffChainTicTacToe";
 import Day044 from "./044_CoolHashes";
 import Day045 from "./045_DStorage";
+import Day046 from "./046_Coinvote";
+import Day047 from "./047_DecentralizedChatbot";
+import Day048 from "./048_ToyBlockchain";
+import Day049 from "./049_PaymentRequest";
 
 ReactDOM.render(
   <HashRouter>
@@ -103,6 +107,10 @@ ReactDOM.render(
       <Route path="/043_OffChainTicTacToe" component={Day043} />
       <Route path="/044_CoolHashes" component={Day044} />
       <Route path="/045_DStorage" component={Day045} />
+      <Route path="/046_Coinvote" component={Day046} />
+      <Route path="/047_DecentralizedChatbot" component={Day047} />
+      <Route path="/048_ToyBlockchain" component={Day048} />
+      <Route path="/049_PaymentRequest" component={Day049} />
     </Switch>
   </HashRouter>,
   document.getElementById("root")
